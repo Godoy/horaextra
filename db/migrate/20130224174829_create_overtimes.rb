@@ -8,6 +8,7 @@ class CreateOvertimes < ActiveRecord::Migration
       t.date :end_date
 
       t.references :user
+      t.references :project
 
       t.timestamps
     end
