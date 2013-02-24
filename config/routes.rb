@@ -1,4 +1,4 @@
-Devise1::Application.routes.draw do
+HorasExtras::Application.routes.draw do
 
 
   get "pages/home"

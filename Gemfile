@@ -5,7 +5,14 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 
-gem 'sqlite3'
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
+ 
+group :development, :test do
+  gem 'sqlite3'
+end
 
 
 # Gems used only for assets and not required
