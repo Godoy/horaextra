@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224170105) do
+ActiveRecord::Schema.define(:version => 20130224174829) do
+
+  create_table "overtimes", :force => true do |t|
+    t.text     "description"
+    t.time     "start_time"
+    t.time     "end_time"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
