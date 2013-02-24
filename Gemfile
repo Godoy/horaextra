@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
 
+gem 'rails_admin'
+
 gem 'devise'
 gem 'omniauth-google-oauth2'
 

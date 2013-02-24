@@ -1,6 +1,10 @@
 HorasExtras::Application.routes.draw do
 
 
+  devise_for :admins
+
+  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   get "pages/home"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
