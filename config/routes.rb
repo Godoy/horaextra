@@ -1,14 +1,22 @@
 HorasExtras::Application.routes.draw do
 
 
+  get "users/sign_out"
+
+  match 'registrar-hora-extra' => "overtime#index"
+
   devise_for :admins
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   get "pages/home"
+  get "pages/ovos"
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   
+  resources :overtimes
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

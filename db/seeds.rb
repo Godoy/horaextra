@@ -7,3 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Admin.create! email: "godoy.ccp@gmail.com", password: "godoy123"
+
+
+#User.Create!([{ email: "tiago.braga@planb.com.br", name: "Tiago Braga" }])
+#User.Create!({ email: "rodrigo.dias@planb.com.br", name: "Rodrigo Dias" })

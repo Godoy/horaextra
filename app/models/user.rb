@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	attr_accessible :email, :name, :birthday, :picture, :gender
 
 	has_many :overtimes, :inverse_of => :user
-	has_many :projects
+	has_and_belongs_to_many :projects #atende varios projetos
 
 	def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
 	    data = access_token.info

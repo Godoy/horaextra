@@ -4,11 +4,10 @@ class CreateProjects < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.references :client
-      t.references :user
+
 
       t.timestamps
     end
     add_index :projects, :client_id
-    add_index :projects, :user_id
   end
 end

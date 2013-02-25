@@ -1,10 +1,12 @@
 class Project < ActiveRecord::Base
 
 
-  attr_accessible :description, :name, :client_id, :user_id
+  attr_accessible :description, :name, :client_id
 
   belongs_to :client
-  belongs_to :user
-
   has_many :overtimes
+
+  has_and_belongs_to_many :users
+  	attr_accessible :user_ids
+  	
 end
