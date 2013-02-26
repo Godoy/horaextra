@@ -1,0 +1,39 @@
+<%= render "shared/menu" %>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @overtime.description %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%= @overtime.start_time %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @overtime.end_time %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @overtime.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @overtime.end_date %>
+</p>
+
+
+
+<p>
+  <b>Project:</b>
+  <%= @overtime.project.name %>
+</p>
+
+
+<%= link_to 'Visualizar Horas Extras', '/horas-extras' %>

@@ -3,7 +3,8 @@ HorasExtras::Application.routes.draw do
 
   get "users/sign_out"
 
-  match 'registrar-hora-extra' => "overtime#index"
+  match 'horas-extras' => "overtimes#index"
+  match 'registrar-hora-extra' => "overtimes#new"
 
   devise_for :admins
 

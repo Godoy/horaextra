@@ -1,0 +1,33 @@
+<h1>Horas Extras</h1>
+
+
+<%= render "shared/menu" %>
+
+
+
+<table>
+  <tr>
+    <th>Description</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Project</th>
+  
+  </tr>
+
+<% @overtimes.each do |overtime| %>
+  <tr>
+    <td><%= overtime.description %></td>
+    <td><%= overtime.start_time %></td>
+    <td><%= overtime.end_time %></td>
+    <td><%= overtime.start_date %></td>
+    <td><%= overtime.end_date %></td>
+    <td><%= overtime.project.name %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
