@@ -5,6 +5,6 @@ class Overtime < ActiveRecord::Base
   belongs_to :project
 
 
-
+  validates :end_date, :end_time, :start_date, :start_time, :user_id, :project_id, :presence => true
 
 end

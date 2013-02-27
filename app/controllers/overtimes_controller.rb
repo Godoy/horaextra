@@ -44,7 +44,7 @@ class OvertimesController < ApplicationController
         format.html { redirect_to "/registrar-hora-extra", notice: 'Hora extra registrada com sucesso.' }
         format.json { render json: @overtime, status: :created, location: @overtime }
       else
-        format.html { render action: "index" }
+        format.html { render action: "new" }
         format.json { render json: @overtime.errors, status: :unprocessable_entity }
       end
     end
