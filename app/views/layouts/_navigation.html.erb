@@ -1,0 +1,21 @@
+<%= link_to "Home", root_path, :class => 'brand' %>
+<ul class="nav">
+  <% if user_signed_in? %>
+    <li>
+    <a href="#">Logout</a>
+    </li>
+  <% else %>
+    <li>
+   <a href="#">Login</a>
+    </li>
+  <% end %>
+  <% if user_signed_in? %>
+    <li>
+    <a href="#">Editar conta</a>
+    </li>
+  <% else %>
+    <li>
+    <a href="#">Cadastrar</a>
+    </li>
+  <% end %>
+</ul>

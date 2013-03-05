@@ -8,13 +8,15 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 
 group :production do
-  gem 'thin'
+  #gem 'thin'
   gem 'pg'
 end
  
 group :development, :test do
   gem 'sqlite3'
 end
+
+gem 'bootstrap-sass'
 
 
 # Gems used only for assets and not required
