@@ -7,11 +7,10 @@
 
 <table>
   <tr>
-    <th>Description</th>
-    <th>Start time</th>
-    <th>End time</th>
-    <th>Start date</th>
-    <th>End date</th>
+    <th>Motivo</th>
+    <th>Inicio</th>
+    <th>Fim</th>
+    <th>Horas Trabalhadas</th>
     <th>Project</th>
   
   </tr>
@@ -19,10 +18,10 @@
 <% @overtimes.each do |overtime| %>
   <tr>
     <td><%= overtime.description %></td>
-    <td><%= overtime.start_time %></td>
-    <td><%= overtime.end_time %></td>
+ 
+    <td><%= overtime.start_date %>, às <%= overtime.start_time %></td>
+    <td><%= overtime.end_date %>, às <%= overtime.end_time %></td>
     <td><%= overtime.start_date %></td>
-    <td><%= overtime.end_date %></td>
     <td><%= overtime.project.name %></td>
   </tr>
 <% end %>
