@@ -26,7 +26,7 @@ body{
 	    a{	    	
 	    	color: #fff;
 	    	float: none;
-	    	padding: 10px 15px;
+	    	padding: 15px 15px;
 	    	text-transform: uppercase;
 	    	text-shadow: none;
 	    	font-weight: bold;
@@ -37,13 +37,16 @@ body{
 	  }
 }
 .navbar .brand{
-	background: url("planb.png") no-repeat;
+	background: url("planb.png") no-repeat 0 1px;
 	margin: 9px 0 0;
     padding-bottom: 0;
     text-indent: -9999px;
     width: 40px;
 }
 
+.logar{
+	color:#fff;
+}
 
 
 
