@@ -2,6 +2,30 @@
 body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
+@font-face {
+    font-family: 'QuicksandLight';
+    src: url('fonts/Quicksand_Light-webfont.eot');
+    src: url('fonts/Quicksand_Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Quicksand_Light-webfont.woff') format('woff'),
+         url('fonts/Quicksand_Light-webfont.ttf') format('truetype'),
+         url('fonts/Quicksand_Light-webfont.svg#QuicksandLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'QuicksandBold';
+    src: url('fonts/Quicksand_Bold-webfont.eot');
+    src: url('fonts/Quicksand_Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Quicksand_Bold-webfont.woff') format('woff'),
+         url('fonts/Quicksand_Bold-webfont.ttf') format('truetype'),
+         url('fonts/Quicksand_Bold-webfont.svg#QuicksandBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
 body{
 	font:{
 		family: Trebuchet MS;
@@ -9,6 +33,12 @@ body{
 		color:#999;
 	}
 }
+
+/* Cores */
+$branco:#ffffff;
+$laranja:#FF7800;
+$cinza:#666666;
+
 .navbar-inner{
 	background-image: linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
 	background-image: -o-linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
@@ -43,10 +73,56 @@ body{
     text-indent: -9999px;
     width: 40px;
 }
+.btn{
+	background: rgb(214, 78, 0);
+	background: -moz-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -webkit-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -o-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -ms-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: linear-gradient(2deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	text-transform: uppercase;
+	text-shadow:none;
+	padding: 10px 20px;
+	font:{
+		color:$branco;
+		family:QuicksandBold;
+	}
 
-.logar{
-	color:#fff;
 }
+.btn.btn-warning{
+	margin: 0 0 0 205px;
+}
+.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled]{
+	background: rgb(214, 78, 0);
+	background: -moz-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -webkit-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -o-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -ms-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: linear-gradient(182deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
 
+	background-position: 0 0;
+}
+.titulo{
+	font:{
+		family: QuicksandLight;
+		size:40px;
+		color:#742007;
+	}
+}
+.logar{
+	width:50%;
+	margin:0 auto;
+}
+h1,h2{
+	text-align: center;
+}
+h2.informacaoLogin{
+	font:{
+		family:QuicksandLight;
+		color:#fff !important;
+		size:16px;
+	}
+
+}
 
 
