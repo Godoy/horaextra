@@ -23,6 +23,16 @@ body { padding-top: 60px; }
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'NewCicle';
+    src: url('fonts/New_Cicle_Semi-webfont.eot');
+    src: url('fonts/New_Cicle_Semi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/New_Cicle_Semi-webfont.woff') format('woff'),
+         url('fonts/New_Cicle_Semi-webfont.ttf') format('truetype'),
+         url('fonts/New_Cicle_Semi-webfont.svg#NewCicle') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 
@@ -35,9 +45,11 @@ body{
 }
 
 /* Cores */
-$branco:#ffffff;
+$blue: #3bbfce;
+$branco:#fff;
 $laranja:#FF7800;
-$cinza:#666666;
+$cinza:#666;
+$cinzaEscuro:#333;
 
 .navbar-inner{
 	background-image: linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
@@ -54,7 +66,7 @@ $cinza:#666666;
 	  li{
 	    float:left;	
 	    a{	    	
-	    	color: #fff;
+	    	color: $branco;
 	    	float: none;
 	    	padding: 15px 15px;
 	    	text-transform: uppercase;
@@ -99,15 +111,16 @@ $cinza:#666666;
 	background: -o-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
 	background: -ms-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
 	background: linear-gradient(182deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-
 	background-position: 0 0;
 }
-.titulo{
+h1{
 	font:{
-		family: QuicksandLight;
+		family: NewCicle;
 		size:40px;
-		color:#742007;
 	}
+	text-transform: uppercase;
+	color:$cinzaEscuro;
+	width:100%;
 }
 .logar{
 	width:50%;
@@ -115,14 +128,53 @@ $cinza:#666666;
 }
 h1,h2{
 	text-align: center;
+	display: inline-block;
 }
-h2.informacaoLogin{
+h2{
 	font:{
 		family:QuicksandLight;
-		color:#fff !important;
 		size:16px;
+	}
+	color:$branco;
+
+}
+ul.submenu{
+ 	float: right;
+    margin: 0 0 25px 25px;
+}
+ul.submenu li a{
+	text-transform:uppercase;
+	color: $laranja;
+	padding-left: 10px;
+	font:{
+		size:15px;
+		family:NewCicle;
+		weight:bold;
 	}
 
 }
+ul.submenu li{
+	list-style-type: none;
+	display: inline;
+	padding-left: 20px;
+}
+#new_overtime{
+	margin: 30px 0 0 10px;
+}
+.txt-descricao{
+	font-size: 14px;
+    margin: 30px 0 0 10px;
+}
+.form-horizontal .control-label{ text-align: left;}
+.form-horizontal .controls { margin-left: 100px; }
+#overtime_description{height: 80px; width: 650px;}
+.alert-danger h2, .alert-error h2{color:#B94A48}
+.informacaoLogin{
+	color: #FF7800;
+    display: block;
+    text-align: center;
+}
 
-
+.btn.btn-warning {
+    margin: 0 0 0 500px;
+}

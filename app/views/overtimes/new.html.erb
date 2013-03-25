@@ -1,76 +1,81 @@
-<h1>Registrar Hora Extra</h1>
-
 <%= render "shared/menu" %>
+<h1>Registro de Horas Extras</h1>
 
-<p id="notice"><%= notice %></p>
+<div class="span10 offset1">
+	<p class="txt-descricao">Aqui são preenchidas as horas extras e sua justificativa.</p>
+	<p id="notice"><%= notice %></p>
+	<% if user_signed_in? %>
 
-<% if user_signed_in? %>
+		<%= form_for @overtime, :html => { :class => 'form-horizontal' } do |f| %>
 
+			  <% if @overtime.errors.any? %>
+			    <div id="error_explanation" class="alert alert-error">
+			      <h2><%= pluralize(@overtime.errors.count, "error") %> prohibited this overtime from being saved:</h2>
 
+			      <ul>
+			      <% @overtime.errors.full_messages.each do |msg| %>
+			        <li><%= msg %></li>
+			      <% end %>
+			      </ul>
+			    </div>
+			  <% end %>
 
-	<%= form_for @overtime, :html => { :class => 'form-horizontal' } do |f| %>
-
-		  <% if @overtime.errors.any? %>
-		    <div id="error_explanation">
-		      <h2><%= pluralize(@overtime.errors.count, "error") %> prohibited this overtime from being saved:</h2>
-
-		      <ul>
-		      <% @overtime.errors.full_messages.each do |msg| %>
-		        <li><%= msg %></li>
-		      <% end %>
-		      </ul>
-		    </div>
-		  <% end %>
-
-	<div class="control-group">
-		<%= f.label :description, :class => 'control-label' %>
-		<div class="controls">
-			<%= f.text_area :description, :class => 'text_field' %>
+		<div class="control-group">
+			<%= f.label :Por_que_foi_necessário_o_trabalho_em_hora_extra?, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.text_area :description, :class => 'text_field' %>
+			</div>
 		</div>
-	</div>
 
 
 
-	<div class="control-group">
-		<%= f.label :start_time, :class => 'control-label' %>
-		<div class="controls">
-			<%= f.time_select :start_time, :class => '' %>
-		</div>
-	</div>	
-	<div class="control-group">
-		<%= f.label :start_date, :class => 'control-label' %>
-		<div class="controls">
-			<%= f.date_select :start_date, :class => '' %>
-		</div>
-	</div>	
+		<div class="control-group">
+			<%= f.label :horário_de_inicio, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.time_select :start_time, :class => '' %>
+			</div>
+		</div>	
+		<div class="control-group">
+			<%= f.label :Data_de_inicio, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.date_select :start_date, :class => '' %>
+			</div>
+		</div>	
 
 
 
-	<div class="control-group">
-		<%= f.label :end_time, :class => 'control-label' %>
-		<div class="controls">
-			<%= f.time_select :end_time, :class => '' %>
-		</div>
-	</div>	
-	<div class="control-group">
-		<%= f.label :end_date, :class => 'control-label' %>
-		<div class="controls">
-			<%= f.date_select :end_date, :class => '' %>
-		</div>
-	</div>	
+		<div class="control-group">
+			<%= f.label :horário_de_conclusão, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.time_select :end_time, :class => '' %>
+			</div>
+		</div>	
+		<div class="control-group">
+			<%= f.label :data_de_conlusão, :class => 'control-label' %>
+			<div class="controls">
+				<%= f.date_select :end_date, :class => '' %>
+			</div>
+		</div>	
 
 
-  
-  <div class="field">
-    <%= f.label :project %><br />
-    <%= collection_select(:overtime, :project_id, Project.all, :id, :name, :prompt => 'Selecione um projeto') %>
-  </div>
+	  
+	  <div class="field">
+	    <%= f.label :Projeto %><br />
+	    <%= collection_select(:overtime, :project_id, Project.all, :id, :name, :prompt => 'Selecione um projeto') %>
+	  </div>
 
 
-		<div class="form-actions">
-			<%= f.submit nil, :class => 'btn btn-primary' %>
-			
-		</div>
+			<div class="form-actions">
+				<%= f.submit nil, :class => 'btn btn-primary' %>
+				
+			</div>
+		<% end %>
+
 	<% end %>
+</div>
 
-<% end %>
+
+
+
+
+
