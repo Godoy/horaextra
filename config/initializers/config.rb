@@ -1,0 +1,1 @@
+HorasExtras::Application.config.session_store = '';
