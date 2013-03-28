@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-Admin.create! email: "godoy.ccp@gmail.com", password: "godoy123"
-Admin.create! email: "natalia.avila@planb.com.br", password: "godoy123"
+Admin.create! email: "lhlalves4@gmail.com", password: "123456789"
+Admin.create! email: "adriano.godoy@planb.com.br", password: "123456789"
 
 #User.Create!([{ email: "tiago.braga@planb.com.br", name: "Tiago Braga" }])
 #User.Create!({ email: "rodrigo.dias@planb.com.br", name: "Rodrigo Dias" })

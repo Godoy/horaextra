@@ -30,32 +30,24 @@
 
 
 		<div class="control-group">
-			<%= f.label :horário_de_inicio, :class => 'control-label' %>
+			<%= f.label :start_overtime, :class => 'control-label' %>
 			<div class="controls">
-				<%= f.time_select :start_time, :class => '' %>
+				<%= f.datetime_select :start_overtime, :class => '' %>
+			
 			</div>
 		</div>	
-		<div class="control-group">
-			<%= f.label :Data_de_inicio, :class => 'control-label' %>
-			<div class="controls">
-				<%= f.date_select :start_date, :class => '' %>
-			</div>
-		</div>	
+			
 
 
 
 		<div class="control-group">
-			<%= f.label :horário_de_conclusão, :class => 'control-label' %>
+			<%= f.label :end_overtime, :class => 'control-label' %>
 			<div class="controls">
-				<%= f.time_select :end_time, :class => '' %>
+				<%= f.datetime_select :end_overtime, :class => '' %>
+			
 			</div>
 		</div>	
-		<div class="control-group">
-			<%= f.label :data_de_conlusão, :class => 'control-label' %>
-			<div class="controls">
-				<%= f.date_select :end_date, :class => '' %>
-			</div>
-		</div>	
+			
 
 
 	  

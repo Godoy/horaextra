@@ -41,14 +41,12 @@ ActiveRecord::Schema.define(:version => 20130224234625) do
 
   create_table "overtimes", :force => true do |t|
     t.text     "description"
-    t.time     "start_time"
-    t.time     "end_time"
-    t.date     "start_date"
-    t.date     "end_date"
+    t.datetime "start_overtime"
+    t.datetime "end_overtime"
     t.integer  "user_id"
     t.integer  "project_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "projects", :force => true do |t|
