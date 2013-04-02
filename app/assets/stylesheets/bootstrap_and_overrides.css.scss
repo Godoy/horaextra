@@ -33,9 +33,6 @@ body { padding-top: 60px; }
     font-weight: normal;
     font-style: normal;
 }
-
-
-
 body{
 	font:{
 		family: Trebuchet MS;
@@ -139,26 +136,28 @@ h2{
 	margin:0 auto;
 }
 
-ul.submenu{
- 	float: right;
-    margin: 0 0 25px 25px;
+ul.submenu {
+  margin: 0 0 25px;
+  li {
+	    list-style-type: none;
+		display: inline;
+		padding-left: 20px;
+		&:first-child{
+			padding-left: 0;
+		}
+    a{
+    	text-transform:uppercase;
+		color: $laranja;
+		padding-left: 10px;
+		font:{
+			size:1.2em;
+			family:NewCicle;
+			weight:bold;
+		}
+    }
+  }
 }
-ul.submenu li a{
-	text-transform:uppercase;
-	color: $laranja;
-	padding-left: 10px;
-	font:{
-		size:15px;
-		family:NewCicle;
-		weight:bold;
-	}
 
-}
-ul.submenu li{
-	list-style-type: none;
-	display: inline;
-	padding-left: 20px;
-}
 #new_overtime{
 	margin: 30px 0 0 10px;
 }
@@ -178,4 +177,34 @@ ul.submenu li{
 }
 .conteudoLogin{
 	text-align: center;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) { 
+
+}
+     
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+
+}
+     
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+
+}
+     
+/* Landscape phones and down */
+@media (max-width: 480px) { 
+
+	ul.submenu {	  
+	  li {
+			padding-left: 8px;    
+	    a{	    	
+			font-size:0.9em;
+			padding-left: 3px;
+	    }
+	  }
+	}
+
 }

@@ -1,9 +1,11 @@
-<h1>Registro de Horas Extras</h1>
+<div class="conteudoLogin">  
+	<h1>Registro de Horas Extras </h1>
 
-<% if flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %></p>
-<% end %>
-<h2 class="informacaoLogin">Efetue login para iniciar o cadastro de hora extra.</h2>
+	<% if flash[:notice] %>
+	      <p class="notice"><%= flash[:notice] %></p>
+	<% end %>
+	<h2 class="informacaoLogin">Efetue login para iniciar o cadastro de hora extra.</h2>
 
 
-<%= link_to "Efetuar Login", user_omniauth_authorize_path(:google_oauth2), :class => "btn btn-warning pull-center" %>
+	<%= link_to "Efetuar Login", user_omniauth_authorize_path(:google_oauth2), :class => "btn btn-warning pull-center" %>
+</div>
