@@ -51,6 +51,29 @@ $laranja:#FF7800;
 $cinza:#666;
 $cinzaEscuro:#333;
 
+h1{
+	font:{
+		family: NewCicle;
+		size:40px;
+	}
+	text-transform: uppercase;
+	color:$cinzaEscuro;
+	width:100%;
+}
+h1,h2{
+	display: inline-block;
+}
+
+h2{
+	font:{
+		family:QuicksandLight;
+		size:1.5em;
+	}
+	color:$branco;
+	text-align: center;
+	line-height: 1.2em;
+}
+
 .navbar-inner{
 	background-image: linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
 	background-image: -o-linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
@@ -68,7 +91,7 @@ $cinzaEscuro:#333;
 	    a{	    	
 	    	color: $branco;
 	    	float: none;
-	    	padding: 15px 15px;
+	    	padding: 15px 15%;
 	    	text-transform: uppercase;
 	    	text-shadow: none;
 	    	font-weight: bold;
@@ -83,7 +106,7 @@ $cinzaEscuro:#333;
 	margin: 9px 0 0;
     padding-bottom: 0;
     text-indent: -9999px;
-    width: 40px;
+    width: 64px;
 }
 .btn{
 	background: rgb(214, 78, 0);
@@ -101,9 +124,6 @@ $cinzaEscuro:#333;
 	}
 
 }
-.btn.btn-warning{
-	margin: 0 0 0 205px;
-}
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled]{
 	background: rgb(214, 78, 0);
 	background: -moz-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
@@ -113,31 +133,12 @@ $cinzaEscuro:#333;
 	background: linear-gradient(182deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
 	background-position: 0 0;
 }
-h1{
-	font:{
-		family: NewCicle;
-		size:40px;
-	}
-	text-transform: uppercase;
-	color:$cinzaEscuro;
-	width:100%;
-}
+
 .logar{
 	width:50%;
 	margin:0 auto;
 }
-h1,h2{
-	text-align: center;
-	display: inline-block;
-}
-h2{
-	font:{
-		family:QuicksandLight;
-		size:16px;
-	}
-	color:$branco;
 
-}
 ul.submenu{
  	float: right;
     margin: 0 0 25px 25px;
@@ -173,8 +174,8 @@ ul.submenu li{
 	color: #FF7800;
     display: block;
     text-align: center;
+    margin-bottom: 20px;
 }
-
-.btn.btn-warning {
-    margin: 0 0 0 500px;
+.conteudoLogin{
+	text-align: center;
 }
