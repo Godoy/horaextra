@@ -169,7 +169,7 @@ ul.submenu {
 .form-horizontal .control-label{ text-align: left; font-weight: bold; width: auto}
 .form-horizontal .controls { margin-left: 0; clear: both; }
 .form-horizontal .field label{ font-weight: bold;}
-#overtime_description{height: 80px; width: 650px;}
+#overtime_description{height: 80px; width: 68%;}
 .alert-danger h2, .alert-error h2{color:#B94A48}
 .informacaoLogin{
 	color: #FF7800;
@@ -179,6 +179,10 @@ ul.submenu {
 }
 .conteudoLogin{
 	text-align: center;
+}
+.form-horizontal .form-actions.btRegistrar{
+	text-align: center;
+	padding-left: 0;
 }
 
 /* Large desktop */
