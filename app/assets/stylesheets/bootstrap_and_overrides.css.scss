@@ -102,7 +102,7 @@ h2{
 .navbar .brand{
 	background: url("planb.png") no-repeat 0 1px;
 	margin: 9px 0 0;
-    padding-bottom: 0;
+    padding-bottom: 10px;
     text-indent: -9999px;
     width: 64px;
 }
@@ -137,8 +137,8 @@ h2{
 	margin:0 auto;
 }
 
-ul.submenu {
-  margin: 0 0 25px;
+ul.menu {
+  margin: 15px 0 0;
   li {
 	    list-style-type: none;
 		display: inline;
@@ -148,8 +148,8 @@ ul.submenu {
 		}
     a{
     	text-transform:uppercase;
-		color: $laranja;
-		padding-left: 10px;
+		color: $branco;
+		padding: 15px 0 0 10px;
 		font:{
 			size:1.2em;
 			family:NewCicle;
@@ -202,8 +202,12 @@ ul.submenu {
      
 /* Landscape phones and down */
 @media (max-width: 480px) { 
-
-	ul.submenu {	  
+	.navbar .brand{
+		background:url(miniLogo.png) no-repeat;
+		width: auto;
+		height: 24px;
+	}
+	ul.menu {	  
 	  li {
 			padding-left: 8px;    
 	    a{	    	
@@ -212,5 +216,6 @@ ul.submenu {
 	    }
 	  }
 	}
+
 
 }
