@@ -18,47 +18,33 @@
 				  </ul>
 			    </div>
 			  <% end %>
-
-		<div class="control-group">
-			<%= f.label :Por_que_foi_necessário_o_trabalho_em_hora_extra?, :class => 'control-label' %>
-			<div class="controls">
-				<%= f.text_area :description, :class => 'text_field' %>
+			
+			<div class="span9">
+				<div class="control-group">
+					<%= f.label :Por_que_foi_necessário_o_trabalho_em_hora_extra?, :class => 'control-label' %>
+					<div class="controls">
+						<%= f.text_area :description, :class => 'text_field' %>
+					</div>
+				</div>
+				<div class="control-group">
+					<%= f.label :Início_da_hora_extra, :class => 'control-label' %>
+					<div class="controls">
+						<%= f.datetime_select :start_overtime, :class => '' %>					
+					</div>
+				</div>	
+				<div class="control-group">
+					<%= f.label :Fim_da_hora_extra, :class => 'control-label' %>
+					<div class="controls">
+						<%= f.datetime_select :end_overtime, :class => '' %>					
+					</div>
+				</div>	
+			  	<div class="field">
+				    <%= f.label :Projeto %>
+				    <%= collection_select(:overtime, :project_id, Project.all, :id, :name, :prompt => 'Selecione um projeto') %>
+			  	</div>
 			</div>
-		</div>
-
-
-
-		<div class="control-group">
-			<%= f.label :Início_da_hora_extra, :class => 'control-label' %>
-			<div class="controls">
-				<%= f.datetime_select :start_overtime, :class => '' %>
-			
-			</div>
-		</div>	
-			
-
-
-
-		<div class="control-group">
-			<%= f.label :Fim_da_hora_extra, :class => 'control-label' %>
-			<div class="controls">
-				<%= f.datetime_select :end_overtime, :class => '' %>
-			
-			</div>
-		</div>	
-			
-
-
-	  
-	  <div class="field">
-	    <%= f.label :Projeto %>
-	    <%= collection_select(:overtime, :project_id, Project.all, :id, :name, :prompt => 'Selecione um projeto') %>
-	  </div>
-
-
-			<div class="form-actions btRegistrar">
-				<%= f.submit :registrar, :class => 'btn btn-warning' %>
-				
+			<div class="form-actions btRegistrar span10">
+				<%= f.submit :registrar, :class => 'btn btn-warning' %>				
 			</div>
 		<% end %>
 
