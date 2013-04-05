@@ -19,7 +19,7 @@
   <tr>
     <td><%= overtime.description %></td>
  
-    <td><%= overtime.start_overtime %></td>
+    <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
     <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
     <td><%= distance_of_time_in_words(overtime.start_overtime, overtime.end_overtime, true) %></td>
     <td><%= overtime.project.name %></td>

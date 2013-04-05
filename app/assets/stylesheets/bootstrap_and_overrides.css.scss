@@ -51,7 +51,7 @@ $cinzaEscuro:#333;
 h1{
 	font:{
 		family: NewCicle;
-		size:40px;
+		size:3em;
 	}
 	text-transform: uppercase;
 	color:$cinzaEscuro;
@@ -215,6 +215,12 @@ ul.menu {
 			padding-left: 3px;
 	    }
 	  }
+	}
+	.txt-descricao{
+		margin-top: 10px;
+	}
+	#new_overtime{
+		margin-top: 20px;
 	}
 
 
