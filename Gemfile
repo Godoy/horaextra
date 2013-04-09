@@ -7,6 +7,7 @@ gem 'rails_admin'
 gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'dotiw' #gem que gera hora exata da horaextra
+gem 'paperclip'
 
 group :production do
   #gem 'thin'
