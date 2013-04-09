@@ -3,30 +3,56 @@
 
 <%= render "shared/menu" %>
 
+    <table cellspacing="0" summary="Tabela de dados fictícios">
+      <thead>
+        <tr>
+          <th><input type="checkbox" value="1" id="marcar-todos" name="marcar-todos" /></th>
+          <th>ID</th>
+          <th>Motivo</th>
+          <th>Inicio</th>
+          <th>Fim</th>
+          <th>Horas trabalhadas</th>
+          <th>Projeto</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @overtimes.each do |overtime| %>
+        <tr>
+          <td><input type="checkbox" value="1" name="marcar[]" /></td>
+          <td>1</td>
+          <td><%= overtime.description %></td>
+          <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+          <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+          <td><%= distance_of_time_in_words(overtime.start_overtime, overtime.end_overtime, true) %></td>
+          <td><%= overtime.project.name %></td>
+          <td>
+            <a href="#"><%= image_tag 'edit.png' %></a>
+            <a href="#"><%= image_tag 'delete.png' %></a>
+          </td>
+        </tr>
+        <% end %>        
+      </tbody>
+    </table>
+    
+    <div id="pager" class="pager">
+      <form>
+        <span>
+          Exibir <select class="pagesize">
+              <option selected="selected"  value="10">10</option>
+              <option value="20">20</option>
+              <option value="30">30</option>
+              <option  value="40">40</option>
+          </select> registros
+        </span>
+        <%= image_tag 'first.png', :class => "first" %>
+        <%= image_tag 'prev.png', :class => "prev" %>
+        <input type="text" class="pagedisplay"/>
+        <%= image_tag 'next.png', :class => "next" %>
+        <%= image_tag 'last.png', :class => "last" %>
+      </form>
+    </div>
 
 
-<table>
-  <tr>
-    <th>Motivo</th>
-    <th>Inicio</th>
-    <th>Fim</th>
-    <th>Horas Trabalhadas</th>
-    <th>Project</th>
-  
-  </tr>
-
-<% @overtimes.each do |overtime| %>
-  <tr>
-    <td><%= overtime.description %></td>
- 
-    <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
-    <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
-    <td><%= distance_of_time_in_words(overtime.start_overtime, overtime.end_overtime, true) %></td>
-    <td><%= overtime.project.name %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
 
 
