@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
 
 
   attr_accessible :description, :name, :client_id
+  validates_presence_of :description, :name, :client_id
 
   belongs_to :client
   has_many :overtimes

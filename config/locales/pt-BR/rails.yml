@@ -231,7 +231,7 @@ pt-BR:
 
     attributes:
       client:
-        picture: "Logo"
+        image: "Logo"
         name: "Nome"
         Picture: "Foto"
         created_at: "Criado em"
