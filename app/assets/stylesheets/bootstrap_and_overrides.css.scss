@@ -188,6 +188,27 @@ ul.menu {
 	padding-left: 0;
 }
 /*relatorio de horas*/
+form{
+  background-color:#f2f2f2;
+  width:600px;
+  margin:10px 0 10px 0;
+  text-align:center;
+}
+
+form p{
+  padding:12px;
+}
+
+form p label{
+  color:#333;
+  font-weight:900;
+}
+
+form input{
+  padding:6px;
+  border:1px solid #ccc;
+  width:300px;
+}
 table{
   width:50%;
   border:1px solid #ccc;

@@ -1,6 +1,6 @@
-$(document).ready(function (){
-
-	      $('table > tbody > tr:odd').addClass('odd');
+$(function(){
+      
+      $('table > tbody > tr:odd').addClass('odd');
       
       $('table > tbody > tr').hover(function(){
         $(this).toggleClass('hover');
@@ -50,5 +50,5 @@ $(document).ready(function (){
           $('table > tbody > tr').removeClass('odd');
           $('table > tbody > tr:odd').addClass('odd');
         });
-
-});
+      
+    });
