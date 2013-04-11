@@ -47,6 +47,7 @@ $branco:#fff;
 $laranja:#FF7800;
 $cinza:#666;
 $cinzaEscuro:#333;
+$cinzaClaro:#ccc;
 
 h1{
 	font:{
@@ -187,48 +188,141 @@ ul.menu {
 	text-align: center;
 	padding-left: 0;
 }
-/*relatorio de horas*/
-table{
-  width:50%;
-  border:1px solid #ccc;
+
+<!-- tabela-->
+.footable > thead > tr > th > span.footable-sort-indicator {
+  width: 16px;
+  height: 16px;
+  display: block;
+  float:right;
+  background: url('sorting_sprite.png') no-repeat top left;
 }
 
-table thead th{
-  background-color:#D64E00;
-  padding:6px;
-  color:#fff;
-  text-align:center;
-  font-size:14px;
-}
-
-table thead th.header{
+.footable > thead > tr > th.footable-sortable:hover {
   cursor:pointer;
 }
-
-table tbody td{
-  padding:6px;
-  text-align:center;
-  color:#333;
+.footable > thead > tr > th.footable-sorted > span.footable-sort-indicator {
+  background-position: 0 -16px;
 }
 
-table tbody tr.odd td{
-  background-color:#ffffcc;
-}
-
-table tbody tr.hover td{
-  background-color:#a9d0f5;
-}
-
-table tbody tr.selected td{
-  background-color:#a9f5a9!important;
+.footable > thead > tr > th.footable-sorted-desc > span.footable-sort-indicator {
+  background-position: 0 -32px;
 }
 
 
+.footable > thead > tr > th,.footable > thead > tr > td {
+  position: relative;
+}
 
+$tamanho: 1px solid $cinzaClaro;
 
+@mixin roundedTable {
+	$radius:6px;
+	border-radius: $radius;
+  	-moz-border-radius: $radius;
+  	-webkit-border-radius: $radius;
+}
 
+.footable {
+  width: 100%;
+  border-spacing: 0;
+  border: $tamanho;
+  @include roundedTable;
+  font:{
+    family: 'trebuchet MS' , 'Lucida sans' , Arial;
+    size: 14px;
+    color: #444;
+  } 
+}
 
+.footable.breakpoint > tbody > tr > td.expand {
+  background: url('plus.png') no-repeat 5px center;
+  padding-left: 40px;
+}
 
+.footable.breakpoint > tbody > tr.footable-detail-show > td.expand {
+  background: url('minus.png') no-repeat 5px center;
+}
+
+.footable.breakpoint > tbody > tr.footable-row-detail {
+  background: #eee;
+}
+
+.footable > tbody > tr:hover {
+  background: #e2e2e2;
+}
+
+.footable.breakpoint > tbody > tr:hover:not(.footable-row-detail) {
+  cursor: pointer;
+}
+
+.footable > tbody > tr > td, .footable > thead > tr > th {
+  border-left: $tamanho;
+  border-top: $tamanho;
+  padding: 10px;
+  text-align: left;
+}
+
+.footable > thead > tr > th, .footable > thead > tr > td {
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(243,243,243,1) 50%, rgba(237,237,237,1) 51%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(50%,rgba(243,243,243,1)), color-stop(51%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(243,243,243,1) 50%,rgba(237,237,237,1) 51%,rgba(255,255,255,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+	-moz-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+	box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;
+	border-top: none;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+}
+
+.footable > thead > tr:first-child > th.footable-first-column, .footable > thead > tr:first-child > td.footable-first-column {
+  -moz-border-radius: 6px 0 0 0;
+  -webkit-border-radius: 6px 0 0 0;
+  border-radius: 6px 0 0 0;
+}
+
+.footable > thead > tr:first-child > th.footable-last-column, .footable > thead > tr:first-child > td.footable-last-column {
+  -moz-border-radius: 0 6px 0 0;
+  -webkit-border-radius: 0 6px 0 0;
+  border-radius: 0 6px 0 0;
+}
+
+.footable > thead > tr:first-child > th.footable-first-column.footable-last-column, .footable > thead > tr:first-child > td.footable-first-column.footable-last-column {
+  -moz-border-radius: 6px 6px 0 0;
+  -webkit-border-radius: 6px 6px 0 0;
+  border-radius: 6px 6px 0 0;
+}
+
+.footable > tbody > tr:last-child > td.footable-first-column {
+  -moz-border-radius: 0 0 0 6px;
+  -webkit-border-radius: 0 0 0 6px;
+  border-radius: 0 0 0 6px;
+}
+
+.footable > tbody > tr:last-child > td.footable-last-column {
+  -moz-border-radius: 0 0 6px 0;
+  -webkit-border-radius: 0 0 6px 0;
+  border-radius: 0 0 6px 0;
+}
+
+.footable > tbody > tr:last-child > td.footable-first-column.footable-last-column {
+  -moz-border-radius: 0 0 6px 6px;
+  -webkit-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+}
+
+.footable > thead > tr > th.footable-first-column, .footable > thead > tr > td.footable-first-column,
+.footable > tbody > tr > td.footable-first-column {
+  border-left: none;
+}
+
+.footable > tbody img {
+  vertical-align:middle;
+}
 
 
 /* Large desktop */
