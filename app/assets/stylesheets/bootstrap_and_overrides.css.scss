@@ -1,5 +1,6 @@
 @import "bootstrap";
 body { padding-top: 60px; }
+.ie8 body, .ie7 body{ padding-top: 0px;}
 @import "bootstrap-responsive";
 
 @font-face {
@@ -72,13 +73,20 @@ h2{
 	text-align: center;
 	line-height: 1.2em;
 }
-
+@mixin btLaranja {
+	$background:rgb(214, 78, 0);
+	background: -moz-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -webkit-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -o-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: -ms-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	background: linear-gradient(2deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d64e00', endColorstr='#f07511',GradientType=0 ); /* IE6-9 */
+}
 .navbar-inner{
-	background-image: linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
-	background-image: -o-linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
-	background-image: -moz-linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
-	background-image: -webkit-linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
-	background-image: -ms-linear-gradient(bottom, rgb(214,78,0) 30%, rgb(240,117,17) 65%);
+	@include btLaranja;
+}
+.ie8 .navbar-inner{
+	margin-bottom: 10px;
 }
 .navbar .nav{
 	display: block;
@@ -100,44 +108,37 @@ h2{
 	    }	   
 	  }
 }
-.navbar .brand{
+.navbar .brand, .ie8 .brand{
 	background: url("planb.png") no-repeat 0 1px;
 	margin: 9px 0 0;
     padding-bottom: 10px;
     text-indent: -9999px;
     width: 64px;
 }
+.ie8 .brand{
+	display: inline-block;
+	height:35px;
+}
 .btn{
-	background: rgb(214, 78, 0);
-	background: -moz-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: -webkit-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: -o-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: -ms-linear-gradient(272deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: linear-gradient(2deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	text-transform: uppercase;
-	text-shadow:none;
+	@include btLaranja;
+	text:{
+		transform:uppercase;
+		shadow:none;
+	}
 	padding: 10px 20px;
 	font:{
 		color:$branco;
 		family:QuicksandBold;
 	}
-
 }
 .btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled]{
-	background: rgb(214, 78, 0);
-	background: -moz-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: -webkit-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: -o-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: -ms-linear-gradient(92deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
-	background: linear-gradient(182deg, rgb(214, 78, 0) 30%, rgb(240, 117, 17) 70%);
+	@include btLaranja;
 	background-position: 0 0;
 }
-
 .logar{
 	width:50%;
 	margin:0 auto;
 }
-
 ul.menu {
   margin: 15px 0 0;
   li {
@@ -159,7 +160,6 @@ ul.menu {
     }
   }
 }
-
 #new_overtime{
 	margin: 30px 0 0 10px;
 }
