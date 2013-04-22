@@ -8,6 +8,16 @@ if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
+ActionMailer::Base.smtp_settings = {
+  :tls                     => true,
+  :address                 => "mail.planb.com.br",
+  :port                    => 587,
+  :domain                  => "planb.com.br",
+  :user_name               => "Luiz Henrique",
+  :password                => "quaresma7",
+  :authentication          => :login,
+  :enable_starttls_auto    => false
+}
 
 module HorasExtras
   class Application < Rails::Application
@@ -44,21 +54,11 @@ module HorasExtras
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
-    config.action_mailer.default_url_options = { :host => "localhost:3000" }
-    
-    
-    config.action_mailer.smtp_settings = {
-       :address                 => "mail.planb.com.br",
-       :port                    => 587,
-       :domain                  => "planb.com.br",
-       :user_name               => "luiz.alves@planb.com.br",
-       :password                => "quaresma7",
-       :authentication          => :login,
-       :enable_starttls_auto    => false
-    }
+    #config.action_mailer.default_url_options = { :host => "localhost:3000" }
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.perform_deliveries = true
-
+    
+        
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
