@@ -9,7 +9,11 @@ gem 'omniauth-google-oauth2'
 gem 'dotiw' #gem que gera hora exata da horaextra
 gem 'paperclip'
 gem 'brdata'
+<<<<<<< HEAD
 gem 'action_mailer_tls', '~> 1.1.3'
+=======
+gem "action_mailer_tls", "~> 1.1.3"
+>>>>>>> 2451d322fb0a5e892d7905923bc091b465a92bc4
 
 group :production do
   #gem 'thin'
