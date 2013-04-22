@@ -52,7 +52,7 @@ module HorasExtras
        :port                    => 587,
        :domain                  => "planb.com.br",
        :user_name               => "luiz.alves@planb.com.br",
-       :password                => "password",
+       :password                => "quaresma7",
        :authentication          => :login,
        :enable_starttls_auto    => false
     }
