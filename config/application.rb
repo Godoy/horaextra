@@ -8,16 +8,7 @@ if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
-ActionMailer::Base.smtp_settings = {
-  :tls                     => true,
-  :address                 => "mail.planb.com.br",
-  :port                    => 587,
-  :domain                  => "planb.com.br",
-  :user_name               => "Luiz Henrique",
-  :password                => "quaresma7",
-  :authentication          => :login,
-  :enable_starttls_auto    => false
-}
+
 
 module HorasExtras
   class Application < Rails::Application
@@ -57,6 +48,15 @@ module HorasExtras
     #config.action_mailer.default_url_options = { :host => "localhost:3000" }
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.perform_deliveries = true
+    ActionMailer::Base.smtp_settings = {
+     :address => "mail.adrianogodoy.com",
+     :port => 587,
+     :domain => "adrianogodoy.com",
+     :user_name => "sender@adrianogodoy.com",
+     :password => "senha",
+     :authentication => :login,
+     :enable_starttls_auto => false
+    }
     
         
     # Use SQL instead of Active Record's schema dumper when creating the database.
