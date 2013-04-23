@@ -87,11 +87,7 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-<<<<<<< HEAD
-    mime-types (1.22)
-=======
     mime-types (1.23)
->>>>>>> 2451d322fb0a5e892d7905923bc091b465a92bc4
     multi_json (1.7.2)
     multipart-post (1.2.0)
     nested_form (0.3.2)
@@ -167,7 +163,7 @@ GEM
       json (~> 1.4)
     remotipart (1.0.5)
     safe_yaml (0.9.1)
-    sass (3.2.7)
+    sass (3.2.8)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)

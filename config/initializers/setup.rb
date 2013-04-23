@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #ActionMailer::Base.smtp_settings = {
  # :tls                     => true,
   #:address                 => "mail.planb.com.br",
@@ -9,8 +9,7 @@
  # :authentication          => :login,
  # :enable_starttls_auto    => false
 #}
-  
-=======
+
 ActionMailer::Base.smtp_settings = {
    :tls => true,
    :address => "smtp.gmail.com",
@@ -20,4 +19,4 @@ ActionMailer::Base.smtp_settings = {
    :user_name => "<User>",
    :password => "<password>" 
 }
->>>>>>> 2451d322fb0a5e892d7905923bc091b465a92bc4
+

@@ -34,10 +34,8 @@ HorasExtras::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
-<<<<<<< HEAD
+
   #config.action_mailer.default_url_options = { :host => "localhost:3000" }
 
-=======
- 
->>>>>>> 2451d322fb0a5e892d7905923bc091b465a92bc4
+
 end
