@@ -19,8 +19,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		      session["devise.google_data"] = auth 
 		      redirect_to new_user_registration_url
 		    end
-		else
-		   redirect_to root_url, notice: "Não permitido."
-	    end
+		#else
+		#   redirect_to root_url, notice: "Não permitido."
+	    #end
 	end
 end
