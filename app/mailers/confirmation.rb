@@ -1,10 +1,10 @@
 class Confirmation < ActionMailer::Base
-  default :from =>"luiz.alves@planb.com.br"
+  default :from =>"thiago.magalhaes@planb.com.br"
   
 
   def registration_confirm(user)
   	@user = user
-  	mail(:to => "lhlalves4@gmail.com")
+  	mail :to => "rodrigo.dias@planb.com.br"
   	
   end
 end

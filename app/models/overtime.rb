@@ -7,7 +7,13 @@ class Overtime < ActiveRecord::Base
 
 
   validates :description, :start_overtime, :end_overtime, :user_id, :project_id, :presence => true
+  after_create :deliver_notification
+  
+protected
 
+  def deliver_notification
+    Confirmation.registration_confirm(self).deliver
+  end
   	
 end 
 

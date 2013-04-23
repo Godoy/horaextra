@@ -45,18 +45,9 @@ module HorasExtras
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
-    #config.action_mailer.default_url_options = { :host => "localhost:3000" }
-    config.action_mailer.raise_delivery_errors = true
+    
+    config.action_mailer.raise_delivery_errors = false
     config.action_mailer.perform_deliveries = true
-    ActionMailer::Base.smtp_settings = {
-     :address => "mail.planb.com.br",
-     :port => 587,
-     :domain => "www.planb.com.br",
-     :user_name => "Luiz Henrique",
-     :password => "quaresma7",
-     :authentication => :login,
-     :enable_starttls_auto => true
-    }
     
         
     # Use SQL instead of Active Record's schema dumper when creating the database.
