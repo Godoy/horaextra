@@ -49,13 +49,13 @@ module HorasExtras
     config.action_mailer.raise_delivery_errors = true
     config.action_mailer.perform_deliveries = true
     ActionMailer::Base.smtp_settings = {
-     :address => "mail.adrianogodoy.com",
+     :address => "mail.planb.com.br",
      :port => 587,
-     :domain => "adrianogodoy.com",
-     :user_name => "sender@adrianogodoy.com",
-     :password => "senha",
+     :domain => "www.planb.com.br",
+     :user_name => "Luiz Henrique",
+     :password => "quaresma7",
      :authentication => :login,
-     :enable_starttls_auto => false
+     :enable_starttls_auto => true
     }
     
         
