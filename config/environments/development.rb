@@ -38,11 +38,11 @@ HorasExtras::Application.configure do
   #config.action_mailer.default_url_options = { :host => 'localhost:3000'}
   
   config.action_mailer.smtp_settings = {
-    :address              => "smtp.gmail.com",
-    :port                 => 587,
-    :domain               => 'www.planb.com.br',
-    :user_name            => 'luiz.alves@planb.com.br',
-    :password             => 'Quaresma7',
+    :address              => ENV["smtp.gmail.com"],
+    :port                 => ENV[587],
+    :domain               => 'horaextra.herokuapp.com',
+    :user_name            => ENV['lhlalves4@gmail.com'],
+    :password             => ENV['quaresma'],
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }
