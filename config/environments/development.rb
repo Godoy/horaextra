@@ -14,7 +14,7 @@ HorasExtras::Application.configure do
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -36,16 +36,4 @@ HorasExtras::Application.configure do
   config.assets.debug = true
 
   #config.action_mailer.default_url_options = { :host => 'localhost:3000'}
-  
-  config.action_mailer.smtp_settings = {
-    :address              => ENV["smtp.gmail.com"],
-    :port                 => ENV[587],
-    :domain               => 'horaextra.herokuapp.com',
-    :user_name            => ENV['lhlalves4@gmail.com'],
-    :password             => ENV['quaresma'],
-    :authentication       => 'plain',
-    :enable_starttls_auto => true  
-  }
-  config.action_mailer.delivery_method = :smtp
-
 end
