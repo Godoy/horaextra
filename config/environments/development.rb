@@ -46,5 +46,6 @@ HorasExtras::Application.configure do
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }
+  config.action_mailer.delivery_method = :smtp
 
 end
