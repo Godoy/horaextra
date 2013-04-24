@@ -4,7 +4,7 @@ class Confirmation < ActionMailer::Base
 
   def registration_confirm(user)
   	@user = user
-  	mail :to => "lhlalves4@gmail.com"
+  	mail :to => "diego.griep@planb.com.br"
   	
   end
 end
