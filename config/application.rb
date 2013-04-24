@@ -46,7 +46,7 @@ module HorasExtras
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
     
-    config.action_mailer.raise_delivery_errors = false
+    #config.action_mailer.raise_delivery_errors = false
     config.action_mailer.perform_deliveries = true
     
         
