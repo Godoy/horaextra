@@ -6,7 +6,7 @@ class Overtime < ActiveRecord::Base
   belongs_to :project
 
 
-  validates :description, :start_overtime, :end_overtime, :user_id, :project_id, :presence => true
+ # validates :description, :start_overtime, :end_overtime, :user_id, :project_id, :presence => true
   after_create :deliver_notification
   
 protected

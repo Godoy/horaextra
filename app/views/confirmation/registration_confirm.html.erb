@@ -1,6 +1,34 @@
-<h1>Olá Gestor,</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hora Extra</title>
+</head>
 
-Eu fiz uma nova hora extra, começei as <%= (@user.start_overtime.strftime('%d/%m/%Y %H:%M')) %>, 
-e finalizei as <%= (@user.end_overtime.strftime('%d/%m/%Y %H:%M')) %> por este motivo <%= @user.description %>.
+<body>
+<table width="700" border="0" cellspacing="0" cellpadding="0" align="center">
+  <tr>
+    <td><img src="http://www.planb.net.br/mateus/topo.png" width="700" height="98" border="0"></td>
+  </tr>
+  <tr>
+    <td>	<h2>Olá Gestor,</h2>
+   				<p>Eu fiz uma nova hora extra, começei as <%= (@user.start_overtime.strftime('%d/%m/%Y %H:%M'))%>
+   				 e finalizei as <%= (@user.end_overtime.strftime('%d/%m/%Y %H:%M')) %> por este motivo <%= (@user.description) %>.</p>
 
-Aguardo a sua aprovação.
+ 			<p>Aguardo a sua aprovação.</p></td>
+  </tr>
+  <tr>
+  	<td><img src="http://www.planb.net.br/mateus/final.png" width="700" height="114" border="0"></td>
+  </tr>
+</table>
+
+
+</body>
+</html>
+
+   
+
+
+
+
+	

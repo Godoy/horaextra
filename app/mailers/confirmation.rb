@@ -1,6 +1,6 @@
 class Confirmation < ActionMailer::Base
-  default :from =>"luiz.alves@planb.com.br"
-  default :to => "lhlalves4@gmail.com"   
+  default :from =>"currency.user.email"
+  default :to => "project_id.user.email"   
 
   def registration_confirm(user)
   	@user = user

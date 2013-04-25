@@ -10,7 +10,7 @@
 
 			  <% if @overtime.errors.any? %>
 			    <div id="error_explanation" class="alert alert-error">
-			      <h2><%=@overtime.errors.count %> <%= (@overtime.errors.count==1)?"erro encontrado":"erros encontrados" %></h2>
+			      <h2><%=@overtime.errors.count %> <%= (@overtime.errors.count==1)? "erro encontrado":"erros encontrados" %></h2>
 			      <ul>
 				      <% @overtime.errors.full_messages.each do |msg| %>
 				        <li><%= msg %></li>
