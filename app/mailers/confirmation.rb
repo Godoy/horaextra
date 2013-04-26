@@ -1,11 +1,15 @@
 class Confirmation < ActionMailer::Base
-  default :from =>"currency.user.email"
-  default :to => "project_id.user.email"   
+  #default :from =>"luiz.alves@planb.com.br"
+      
 
-  def registration_confirm(user)
-  	@user = user
-  	mail(:subject => "[Cadastramento de Hora Extra] #{user.start_overtime}, #{user.end_overtime}
-  	#{user.description}")
+  def registration_confirm(overtime)
+  	@overtime = overtime  	 
+  	mail(:from =>overtime.user.email,
+  		:to => overtime.project.users.first.email,
+  		:bcc => overtime.project.users.second.email, overtime.project.users.three.email,
+  		:subject => "[Cadastramento de Hora Extra] #{overtime.start_overtime}, #{overtime.end_overtime}, #{overtime.description}")
   	
   end
 end
+#mail(:to => recipient.email_address_with_name,
+         #:bcc => ["bcc@example.com", "Order Watcher <watcher@example.com>"])

@@ -11,11 +11,15 @@
     <td><img src="http://www.planb.net.br/mateus/topo.png" width="700" height="98" border="0"></td>
   </tr>
   <tr>
-    <td>	<h2>Olá Gestor,</h2>
-   				<p>Eu fiz uma nova hora extra, começei as <%= (@user.start_overtime.strftime('%d/%m/%Y %H:%M'))%>
-   				 e finalizei as <%= (@user.end_overtime.strftime('%d/%m/%Y %H:%M')) %> por este motivo <%= (@user.description) %>.</p>
+    <td width="600" height="300" align:"center" style ="font-family: Times New Roman; font-size:15">	<h2>Olá Gestor,</h2>
+   				<p>Eu fiz uma nova hora extra, começei as <%= (@overtime.start_overtime.strftime('%d/%m/%Y %H:%M'))%>
+   				 e finalizei as <%= (@overtime.end_overtime.strftime('%d/%m/%Y %H:%M')) %> por este motivo: <br>
+            <%= (@overtime.description) %>.</p>
 
  			<p>Aguardo a sua aprovação.</p></td>
+  </tr>
+  <tr>
+    
   </tr>
   <tr>
   	<td><img src="http://www.planb.net.br/mateus/final.png" width="700" height="114" border="0"></td>
