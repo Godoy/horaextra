@@ -1,0 +1,2 @@
+module NewShootHelper
+end

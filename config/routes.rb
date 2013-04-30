@@ -5,6 +5,7 @@ HorasExtras::Application.routes.draw do
 
   match 'horas-extras' => "overtimes#index"
   match 'registrar-hora-extra' => "overtimes#new"
+  match 'aprovar/:id' => "overtimes#approve"
 
   devise_for :admins
 

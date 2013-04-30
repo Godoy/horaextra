@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130409161306) do
+ActiveRecord::Schema.define(:version => 20130429205743) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -48,8 +48,9 @@ ActiveRecord::Schema.define(:version => 20130409161306) do
     t.datetime "end_overtime"
     t.integer  "user_id"
     t.integer  "project_id"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.string   "status",         :default => "pedding"
   end
 
   create_table "projects", :force => true do |t|

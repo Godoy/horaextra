@@ -10,30 +10,17 @@
 
 <p>
   <b>Início da hora extra:</b>
-  <%= @overtime.start_time %>
+  <%= @overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %>
 </p>
 
 <p>
   <b>Fim da hora extra:</b>
-  <%= @overtime.end_time %>
+  <%= @overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %>
 </p>
-
-<p>
-  <b>Data de ínicio:</b>
-  <%= @overtime.start_date %>
-</p>
-
-<p>
-  <b>Data final:</b>
-  <%= @overtime.end_date %>
-</p>
-
-
 
 <p>
   <b>Projeto:</b>
   <%= @overtime.project.name %>
 </p>
 
-
-<%= link_to 'Visualizar Horas Extras', '/horas-extras' %>
+<%= link_to 'Confirmar Hora Extra', '/horas-extras' %>

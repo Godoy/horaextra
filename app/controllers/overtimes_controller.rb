@@ -31,8 +31,6 @@ class OvertimesController < ApplicationController
       format.json { render json: @overtime }
     end
   end
-
-
   # POST /overtimes
   # POST /overtimes.json
   def create
@@ -41,7 +39,7 @@ class OvertimesController < ApplicationController
 
     respond_to do |format|
       if @overtime.save
-       #Confirmation.registration_confirm(@user).deliver
+       Notification.registration_confirm(@overtime).deliver
         
         format.html { redirect_to "/registrar-hora-extra", notice: 'Hora extra registrada com sucesso.' }
         format.json { render json: @overtime, status: :created, location: @overtime }
@@ -53,4 +51,23 @@ class OvertimesController < ApplicationController
   end
 
 
+  def approve
+    #TODO:TROCAR ID POR HASH OU QUALQUER COISA CRIPTOGRAFADA OU TOKEN 
+    #status gerar um campo com um default sempre pendente 
+    overtime = Overtime.find(params[:id])
+    overtime.status = 'approved'
+
+    if overtime.save
+      Notification.send_for_rh(overtime).deliver #notifica o RH
+      Notification.your_overtime_approved(overtime).deliver #notifica o cara que registrou
+      
+      respond_to do |format|
+        format.html 
+        format.json { render json: @overtime }
+      end
+    else
+      format.html { render action: "index" }
+      format.json { render json: overtime.errors, status: :unprocessable_entity }
+    end
+  end
 end
