@@ -1,5 +1,5 @@
 class Notification < ActionMailer::Base
-  #default :from =>"luiz.alves@planb.com.br"
+ 
       
 
   def registration_confirm(overtime)
