@@ -10,4 +10,10 @@ class Overtime < ActiveRecord::Base
   	
 end 
 
-  
+
+
+#- Exibir, também no relatório de horas extras, o total de horas APROVADAS que o usuario possui
+
+
+
+#- Possibilidade 
