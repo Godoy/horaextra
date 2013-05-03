@@ -4,11 +4,11 @@ class Notification < ActionMailer::Base
 
   def registration_confirm(overtime)
    		@overtime = overtime
-   		mail(:from =>overtime.user.email, #from CORRETO
+   		mail(:from => overtime.user.email, #from CORRETO
    			 :to => overtime.project.users.first.email,
    			 #:bcc => overtime.project.users.second.email,
-         :cc => overtime.project.users.last.email,
-   			 :subject => "[Cadastramento de Hora Extra] #{overtime.start_overtime}, #{overtime.end_overtime}, #{overtime.description}")
+         #:cc => overtime.project.users.last.email,
+   			 :subject => "[Cadastramento de Hora Extra]")
   
   end
   
