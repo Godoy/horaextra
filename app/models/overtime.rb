@@ -6,7 +6,6 @@ class Overtime < ActiveRecord::Base
   belongs_to :project
 
 
-
   	
 end 
 
@@ -16,4 +15,3 @@ end
 
 
 
-#- Possibilidade 
