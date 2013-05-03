@@ -4,9 +4,12 @@ class Overtime < ActiveRecord::Base
 
   belongs_to :user, :inverse_of => :overtimes
   belongs_to :project
-
-
-  	
+ 
+  def count_time
+  	overtime.each do |overtime|
+  		time = (@overtime.end_overtime - @overtime.start_overtime).strftime('%H:%M')
+  	end	
+  end 	
 end 
 
 
