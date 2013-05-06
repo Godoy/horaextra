@@ -71,8 +71,8 @@ module HorasExtras
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'www.planb.com.br',
-    :user_name            => 'luiz.alves@planb.com.br',
-    :password             => 'Quaresma7',
+    :user_name            => '<address>@planb.com.br',
+    :password             => '<password>',
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }
