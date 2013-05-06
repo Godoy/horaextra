@@ -71,8 +71,8 @@ module HorasExtras
     :address              => "smtp.gmail.com",
     :port                 => 587,
     :domain               => 'www.planb.com.br',
-    :user_name            => '<address>@planb.com.br',
-    :password             => '<password>',
+    :user_name            => 'novahoraextra@gmail.com',
+    :password             => 'hora123456',
     :authentication       => 'plain',
     :enable_starttls_auto => true  
   }

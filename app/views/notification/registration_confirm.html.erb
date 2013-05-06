@@ -11,15 +11,15 @@
     <td><img src="http://www.planb.net.br/mateus/topo.png" width="700" height="98" border="0"></td>
   </tr>
   <tr>
-    <td width="600" height="300" align:"center" style ="font-family: Arial; font-size:18">	<h2>Olá Gestor,</h2>
-   				<p>Eu fiz uma nova hora extra, começei as <%= (@overtime.start_overtime.strftime('%d/%m/%Y %H:%M'))%>
-   				 e finalizei as <%= (@overtime.end_overtime.strftime('%d/%m/%Y %H:%M')) %> por este motivo: <br>
+    <td width="600" height="300" align:"center" style ="font-family: Arial; font-size:18">	<h2>Olá <%=(@overtime.project.users.name) %>,</h2>
+   				<p>No seu <%= (@overtime.project.name) %>, foi criada uma hora extra por <%=(@overtime.user.name)%>,que começou as
+            <%= (@overtime.start_overtime.strftime('%d/%m/%Y %H:%M'))%> e foi finalizada as <%= (@overtime.end_overtime.strftime('%d/%m/%Y %H:%M')) %> por este motivo: <br>
             <%= (@overtime.description) %>.</p>
 
  			<p>Aguardo a sua aprovação.</p></td>
   </tr>
   <tr align="center">
-    <a href="http://horaextra.herokuapp.com/aprovar/<%= @overtime.id %>"><img src="http://www.planb.net.br/mateus/BT.png" width="366" height="62" border="0"></a>
+    <a href="http://localhost:3000/aprovar/<%= @overtime.id %>"><img src="http://www.planb.net.br/mateus/BT.png" width="366" height="62" border="0"></a>
   </tr>
   <tr>
   	<td><img src="http://www.planb.net.br/mateus/final.png" width="700" height="114" border="0"></td>

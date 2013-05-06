@@ -6,7 +6,7 @@ class Notification < ActionMailer::Base
    		@overtime = overtime
    		mail(:from => overtime.user.email, #from CORRETO
    			 :to => overtime.project.users.first.email,
-   			 :bcc => overtime.project.users.last.email,
+   			 #:bcc => overtime.project.users.second.email,
          #:cc => overtime.project.users.last.email,
    			 :subject => "[Cadastramento de Hora Extra]")
   
@@ -16,8 +16,8 @@ class Notification < ActionMailer::Base
   def send_for_rh(overtime)
   		@overtime = overtime
   		mail(:from => overtime.project.users.first.email,
-  		 :to => "leandro.araujo@planb.com.br",
-  		 #:bcc => "viviane.souza@planb.com.br",
+  		 :to => "jacqueline.pereira@planb.com.br",
+  		 :bcc => "viviane.souza@planb.com.br",
   		 :subject => "[Hora Extra]")  
   end
 
