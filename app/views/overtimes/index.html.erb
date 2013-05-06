@@ -4,6 +4,7 @@
 <%= render "shared/menu" %>
 
     <div class="pull-right">Pesquisar <input id="filter" type="text" /></div>
+    <div class="pull-left"></div>
     <table data-filter="#filter" class="footable">
       <thead>
         <tr>
@@ -31,7 +32,7 @@
       <tbody>
         <% @overtimes.each do |overtime| %>
           <tr>
-            <td><%= overtime.description %></td><td><a target="_blank" href="http://www.google.com"><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></a></td><td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+            <td><%= overtime.description %></td><td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></a></td><td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
             <td data-value="78025368997"><%= distance_of_time_in_words(overtime.start_overtime, overtime.end_overtime, true) %></td>
             <td data-value="suspended"><%= overtime.project.name %></td>
             <td data-value="suspended">
