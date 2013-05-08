@@ -5,10 +5,14 @@ class Overtime < ActiveRecord::Base
   belongs_to :user, :inverse_of => :overtimes
   belongs_to :project
  
-  def count_time
-  	overtime.each do |overtime|
-  		time = (@overtime.end_overtime - @overtime.start_overtime).strftime('%H:%M')
-  	end	
+  def self.SumOvertimes(current_user)
+  	#time = (:end_overtime -:start_overtime).strftime('%H:%M')
+  	#time.sum
+  	overtimesApproved = current_user.overtimes.where("status = 'approved'")
+  	overtimesApproved.each do | overtimesApproved|
+  		overtime = ("end_overtime - :start_overtime").to_s.sum
+  	end
+  	
   end 	
 end 
 

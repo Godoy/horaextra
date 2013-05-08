@@ -1,10 +1,10 @@
-<h1>Horas Extras</h1>
+  <h1>Horas Extras</h1>
 
 
 <%= render "shared/menu" %>
 
     <div class="pull-right">Pesquisar <input id="filter" type="text" /></div>
-    <div class="pull-left"></div>
+    <div class="pull-left">Total de Horas Aprovadas: <%= distance_of_time_in_words Overtime.SumOvertimes(current_user).to_s.sum%> </div>
     <table data-filter="#filter" class="footable">
       <thead>
         <tr>
@@ -43,6 +43,7 @@
               end
               %>
           </td>
+          <td> <%= distance_of_time_in_words(overtime.start_overtime, overtime.end_overtime, true).sum %>
         </tr>   
         <% end %> 
       </tbody>
