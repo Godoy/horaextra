@@ -32,7 +32,9 @@
       <tbody>
         <% @overtimes.each do |overtime| %>
           <tr>
-            <td><%= overtime.description %></td><td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></a></td><td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+            <td><%= overtime.description %></td>
+            <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+            <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
             <td data-value="78025368997"><%= (Time.mktime(0)+(overtime.end_overtime - overtime.start_overtime).to_i).strftime("%H:%M") %></td>
             <td data-value="suspended"><%= overtime.project.name %></td>
             <td data-value="suspended">
@@ -42,7 +44,8 @@
                   concat image_tag("active.png") 
               end
               %>
-        <% end %> 
+          </tr>
+      <% end %> 
       </tbody>
     </table>
 
