@@ -6,7 +6,7 @@ gem 'rails_admin'
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
-gem 'dotiw' #gem que gera hora exata da horaextra
+gem "dotiw", "~> 1.1.1" #gem que gera hora exata da horaextra
 gem 'paperclip'
 gem 'brdata'
 gem 'action_mailer_tls', '~> 1.1.3'
