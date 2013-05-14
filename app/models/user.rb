@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
 	has_many :overtimes, :inverse_of => :user
 	has_and_belongs_to_many :projects #atende varios projetos
+	has_many :discount
 	
 	def getPicture() 
 		user = User.find_by_email(self.email)
@@ -35,4 +36,5 @@ class User < ActiveRecord::Base
 	    end
 	    user
 	end
+	
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130429205743) do
+ActiveRecord::Schema.define(:version => 20130510123337) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(:version => 20130429205743) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "discounts", :force => true do |t|
+    t.text     "description"
+    t.date     "day_off"
+    t.time     "time_off"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "overtimes", :force => true do |t|

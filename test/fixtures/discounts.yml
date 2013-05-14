@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  description: MyText
+  day_off: 2013-05-10
+  time_off: 2013-05-10 09:33:37
+  user: 
+
+two:
+  description: MyText
+  day_off: 2013-05-10
+  time_off: 2013-05-10 09:33:37
+  user: 

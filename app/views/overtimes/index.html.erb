@@ -1,10 +1,10 @@
-  <h1>Horas Extras</h1>
+<h1>Horas Extras</h1>
 
 
 <%= render "shared/menu" %>
 
     <div class="pull-right">Pesquisar <input id="filter" type="text" /></div>
-    <div class="pull-left">Total de Horas Aprovadas: <%= distance_of_time_in_words Overtime.SumOvertimes(current_user).to_s.sum%> </div>
+    <div class="pull-left">Total de Horas Aprovadas: <%=  (Time.mktime(0)+(Overtime.SumOvertimes(current_user) - Discount.diff(current_user)).to_i).strftime("%d/%m/%Y %H:%M") %> </div>
     <table data-filter="#filter" class="footable">
       <thead>
         <tr>
@@ -17,7 +17,7 @@
           <th data-hide="phone,tablet">
             Fim
           </th>
-          <th data-hide="phone,tablet" data-type="numeric">
+          <th data-hide="phone,tablet" data-type="numeric"> 
             Horas trabalhadas
           </th>
           <th data-hide="phone">
@@ -33,7 +33,7 @@
         <% @overtimes.each do |overtime| %>
           <tr>
             <td><%= overtime.description %></td><td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></a></td><td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
-            <td data-value="78025368997"><%= distance_of_time_in_words(overtime.start_overtime, overtime.end_overtime, true) %></td>
+            <td data-value="78025368997"><%= (Time.mktime(0)+(overtime.end_overtime - overtime.start_overtime).to_i).strftime("%H:%M") %></td>
             <td data-value="suspended"><%= overtime.project.name %></td>
             <td data-value="suspended">
               <% if overtime.status == "pedding" 
@@ -42,9 +42,7 @@
                   concat image_tag("active.png") 
               end
               %>
-          </td>
-          <td> <%= distance_of_time_in_words(overtime.start_overtime, overtime.end_overtime, true).sum %>
-        </tr>   
+          </td> 
         <% end %> 
       </tbody>
     </table>

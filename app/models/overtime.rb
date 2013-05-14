@@ -6,19 +6,18 @@ class Overtime < ActiveRecord::Base
   belongs_to :project
  
   def self.SumOvertimes(current_user)
-  	#time = (:end_overtime -:start_overtime).strftime('%H:%M')
-  	#time.sum
-  	overtimesApproved = current_user.overtimes.where("status = 'approved'")
-  	overtimesApproved.each do | overtimesApproved|
-  		overtime = ("end_overtime - :start_overtime").to_s.sum
+   	overtimesApproveds = current_user.overtimes.where("status = 'approved'")
+    overtime = 0
+  	overtimesApproveds.each do | overtimesApproved |
+  		overtime += (overtimesApproved.end_overtime - overtimesApproved.start_overtime).to_i
   	end
-  	
-  end 	
+    overtime
+  end  
 end 
 
 
 
 #- Exibir, também no relatório de horas extras, o total de horas APROVADAS que o usuario possui
 
-
+#"Overtime.SumOvertimes(current_user) - 
 

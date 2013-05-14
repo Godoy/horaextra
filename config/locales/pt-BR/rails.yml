@@ -228,6 +228,9 @@ pt-BR:
       admin:
         one: Administrador
         other: Administradores
+      discount:
+        one: Desconto
+        other: Descontos
 
     attributes:
       client:
@@ -268,6 +271,11 @@ pt-BR:
         last_sign_in_ip: "Ip"
         current_sign_in_ip: "Ip"
         last_sign_in_at: "Ultima vez que logou"
+      discount:
+        time_off: "Hora da Folga"
+        day_off: "Dia da Folga"
+        description: "Motivo"
+        user: "Usuário"
         
 
         
