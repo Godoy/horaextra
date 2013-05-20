@@ -28,4 +28,11 @@ class Notification < ActionMailer::Base
   		 :to => overtime.user.email,
   		 :subject => "Confirmacao da sua Hora Extra")  	
   end
+
+  def no_approved(overtime)
+    @overtime = overtime
+    mail(:from => "jacqueline.pereira@planb.com.br",
+       :to => overtime.user.email,
+       :subject => "Confirmacao da sua Hora Extra")   
+  end
 end

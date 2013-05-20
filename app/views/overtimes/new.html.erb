@@ -40,7 +40,7 @@
 				</div>	
 			  	<div class="field">
 				    <%= f.label :Projeto %>
-				    <%= collection_select(:overtime, :project_id, Project.all, :id, :name, :prompt => 'Selecione um projeto') %>
+				    <%= select( :project, :client_project, Client.all.collect {|project| [ project.name ] }, { :prompt => 'Selecione' })  %>
 			  	</div>
 			</div>
 			<div class="form-actions btRegistrar span10">
@@ -50,7 +50,6 @@
 
 	<% end %>
 </div>
-
 
 
 

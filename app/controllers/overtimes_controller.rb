@@ -41,7 +41,7 @@ class OvertimesController < ApplicationController
       if @overtime.save
        Notification.registration_confirm(@overtime).deliver
         
-        format.html { redirect_to "/registrar-hora-extra", notice: 'Hora extra registrada com sucesso.' }
+        format.html { redirect_to "/registrar-hora-extra", notice: 'SUA HORA EXTRA FOI COMPUTADA, AGUARDE O GESTOR' }
         format.json { render json: @overtime, status: :created, location: @overtime }
       else
         format.html { render action: "new" }
@@ -60,6 +60,7 @@ class OvertimesController < ApplicationController
     if overtime.save
       Notification.send_for_rh(overtime).deliver #notifica o RH
       Notification.your_overtime_approved(overtime).deliver #notifica o cara que registrou
+
       
       respond_to do |format|
         format.html 
@@ -68,6 +69,32 @@ class OvertimesController < ApplicationController
     else
       format.html { render action: "index" }
       format.json { render json: overtime.errors, status: :unprocessable_entity }
+    end
+  end
+
+  def no_approved
+    logger.debug "TESTEEE"
+    overtime = Overtime.find(params[:id])
+
+    if overtime.save
+      Notification.no_approved(overtime).deliver 
+
+      respond_to do |format|
+        format.html 
+        format.json { render json: @overtime }
+      end
+    else
+      format.html { render action: "index" }
+      format.json { render json: overtime.errors, status: :unprocessable_entity }
+    end
+  end
+  def manager
+    logger.debug "TESTEEE"
+    @overtime = Overtime.all
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @overtime }
     end
   end
 end

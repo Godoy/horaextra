@@ -1,0 +1,4 @@
+<%=(@overtime.user.name)%> sua Hora Extra do dia <%= (@overtime.start_overtime.strftime('%d/%m/%Y %H:%M'))%> as <%= (@overtime.end_overtime.strftime('%d/%m/%Y %H:%M')) %> por este motivo: <br>
+            <%= (@overtime.description) %>.</p>
+
+ 			<p>Não foi aprovada, pelo <%=@overtime.project.users.first.name %></p>

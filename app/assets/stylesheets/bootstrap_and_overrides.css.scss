@@ -131,7 +131,7 @@ h2{
 		family:QuicksandBold;
 	}
 }
-.btn-warning:hover, .btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled]{
+.btn-warning:focus, .btn-warning:active, .btn-warning.active, .btn-warning.disabled, .btn-warning[disabled]{
 	@include btLaranja;
 	background-position: 0 0;
 }

@@ -6,7 +6,9 @@ HorasExtras::Application.routes.draw do
   match 'horas-extras' => "overtimes#index"
   match 'registrar-hora-extra' => "overtimes#new"
   match 'aprovar/:id' => "overtimes#approve"
-
+  match 'no_approved/:id' => "overtimes#no_approved"
+  match 'manager' => "overtimes#manager"
+ 
   devise_for :admins
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
