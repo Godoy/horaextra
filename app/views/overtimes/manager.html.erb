@@ -2,31 +2,51 @@
 
 
 <%= render "shared/menu" %>
-    <div class="pull-left">Selecione o Projeto <%= @projec %></div>
+    <div class="pull-left"> <%= select("project", "project_id", Project.all.collect {|project| [ project.name, project.id ] }, { :prompt => 'Selecione um projeto' })      %></div>
+    <div class="pull-right">Total de Horas  <%=  (Overtime.SumOvertimes(current_user)/ 3600).to_i %> Horas </div>
     <table data-filter="#filter" class="footable">
       <thead>
         <tr>
           <th data-class="expand" data-sort-initial="true">
-            Motivo
-          </th>
-          <th>
-            Inicio
-          </th>
-          <th data-hide="phone,tablet">
-            Fim
-          </th>
-          <th data-hide="phone,tablet" data-type="numeric"> 
-            Horas trabalhadas
-          </th>
-          <th data-hide="phone">
             Projeto
           </th>
+          <th>
+           Usuario 
+          </th>
+          <th data-hide="phone,tablet">
+            Horario de Inicial
           </th>
           <th data-hide="phone">
-            Usuario
+            Horairio Final
+          </th>
+          <th data-hide="phone">
+            Motivo
+          </th>
+          <th data-hide="phone">
+            Status de Aprovação
           </th>
         </tr>
       </thead>
+      <% @overtime.each do |overtime| %>
+          <tr>
+            <td data-value="suspended"><%= overtime.project.name %></td>
+            <td><%= overtime.user.name %></td>
+            <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+            <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+            <td><%= overtime.description %></td>
+           <td data-value="suspended">
+              <% if overtime.status == "pedding" 
+                  concat image_tag("suspended.png") 
+
+               else overtime.status == "approved"
+                  concat image_tag("active.png") 
+              end
+              %>
+            </td>            
+           </tr>
+      <% end %> 
+      </tbody>
+    </table>
       
 
      

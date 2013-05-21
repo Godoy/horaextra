@@ -35,6 +35,5 @@ class User < ActiveRecord::Base
 		    		  )
 	    end
 	    user
-	end
-	
+	end	
 end

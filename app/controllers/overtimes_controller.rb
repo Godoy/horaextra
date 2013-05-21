@@ -73,7 +73,7 @@ class OvertimesController < ApplicationController
   end
 
   def no_approved
-    logger.debug "TESTEEE"
+    #logger.debug "TESTEEE" printar no console
     overtime = Overtime.find(params[:id])
 
     if overtime.save
@@ -84,17 +84,16 @@ class OvertimesController < ApplicationController
         format.json { render json: @overtime }
       end
     else
-      format.html { render action: "index" }
+      format.html 
       format.json { render json: overtime.errors, status: :unprocessable_entity }
     end
   end
   def manager
-    logger.debug "TESTEEE"
     @overtime = Overtime.all
 
     respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @overtime }
+      format.html # index.html.erb
+      format.json { render json: @overtimes }
     end
   end
 end
