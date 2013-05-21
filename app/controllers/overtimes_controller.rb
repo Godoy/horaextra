@@ -91,6 +91,8 @@ class OvertimesController < ApplicationController
   def manager
     @overtime = Overtime.all
 
+    @projects = current_user.projects
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @overtimes }
