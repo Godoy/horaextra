@@ -36,17 +36,16 @@
             <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
             <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
             <td><%= overtime.description %></td>
-           <td data-value="suspended">
+            <td>
               <% if overtime.status == "pedding" 
                   concat image_tag("suspended.png") 
 
                else overtime.status == "approved"
                   concat image_tag("active.png") 
               end
-              %>
-                        
-           </tr>
-      <% end %> 
+              %>         
+          </tr>
+        <% end %> 
       </tbody>
     </table>
       
