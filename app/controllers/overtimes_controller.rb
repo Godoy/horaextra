@@ -90,7 +90,6 @@ class OvertimesController < ApplicationController
   end
   def manager
     @overtime = Overtime.all
-
     @projects = current_user.projects
 
     respond_to do |format|
