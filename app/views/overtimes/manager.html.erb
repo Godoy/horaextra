@@ -2,13 +2,8 @@
 
 <%= render "shared/menu" %>
 
-<<<<<<< HEAD
     <div class="pull-right">Total de Horas  <%= @total_times %>  </div>
     <div class="pull-left" > <%=select("project", "project_id", @projects.collect {|project| [ project.name, project.id ] }, { :prompt => 'Selecione um projeto' }) %></div>
-=======
-    <div class="pull-right">Total de Horas  <%=  (Overtime.SumOvertimes(current_user)/ 3600).to_i %> Horas </div>
-    <div class="pull-left"> <%= select("project", "project_id", @projects.collect {|project| [ project.name, project.id ]}, { :prompt => 'Selecione um projeto' }) %></div>
->>>>>>> 8c49793c497a5d6e079e1f6926d343cddd323878
     <table data-filter="#filter" class="footable">
       <thead>
         <tr>
