@@ -89,7 +89,14 @@ class OvertimesController < ApplicationController
     end
   end
   def manager
-    @overtime = Overtime.all
+    if params[:project_id].nil?
+      @overtime = Overtime.all
+      @total_times = (Overtime.SumOvertimes(current_user)/ 3600).to_i
+    else
+      @overtime = Overtime.where(:project_id => params[:project_id])
+      @total_times = (Project.find(params[:project_id]).SumOvertimes/ 3600).to_i
+    end
+
     @projects = current_user.projects
 
     respond_to do |format|

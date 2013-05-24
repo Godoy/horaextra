@@ -1,10 +1,9 @@
 <h1>Registro do Gestor</h1>
 
-
 <%= render "shared/menu" %>
 
-    <div class="pull-right">Total de Horas  <%=  (Overtime.SumOvertimes(current_user)/ 3600).to_i %> Horas </div>
-    <div class="pull-left"> <%= select("project", "project_id", @projects.collect {|project| [ project.name, project.id ] }, { :prompt => 'Selecione um projeto' }) %></div>
+    <div class="pull-right">Total de Horas  <%= @total_times %>  </div>
+    <div class="pull-left" > <%=select("project", "project_id", @projects.collect {|project| [ project.name, project.id ] }, { :prompt => 'Selecione um projeto' }) %></div>
     <table data-filter="#filter" class="footable">
       <thead>
         <tr>
@@ -50,3 +49,7 @@
     </table>
 
     
+
+
+
+     

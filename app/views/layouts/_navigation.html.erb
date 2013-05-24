@@ -4,7 +4,9 @@
     <ul class="menu pull-right">
       <li><i class="icon-pencil"></i><%= link_to "Registrar Hora Extra", "/registrar-hora-extra"%></li>
       <li><i class="icon-list-alt"></i><%= link_to "Relatórios", "/horas-extras"%></li>
-      <li><i class="icon-list-alt"></i><%= link_to "Dedicado ao Gestor", "/manager"%></li>
+      <% if current_user.projects.count > 0 %>
+      	<li><i class="icon-list-alt"></i><%= link_to "Dedicado ao Gestor", "/manager"%></li>
+      <% end %>
       <li><i class="icon-remove-circle"></i><%= link_to "Sair", "/users/sign_out"%></li>
     </ul>
   <% end %>
