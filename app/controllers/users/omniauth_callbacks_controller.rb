@@ -5,7 +5,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
 	    auth = request.env["omniauth.auth"]
 
-	    #if auth["extra"]['raw_info']['hd'] == "planb.com.br"
+	    if auth["extra"]['raw_info']['hd'] == "planb.com.br"
 		    @user = User.find_for_google_oauth2(auth, current_user)
 		    
 		    session["auth"] = auth
@@ -19,8 +19,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 		      session["devise.google_data"] = auth 
 		      redirect_to new_user_registration_url
 		    end
-		#else
-		#   redirect_to root_url, notice: "Não permitido."
-	    #end
+		else
+		  redirect_to root_url, notice: "Não permitido."
+	    end
 	end
 end
