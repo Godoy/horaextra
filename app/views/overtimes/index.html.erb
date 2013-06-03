@@ -4,7 +4,8 @@
 <%= render "shared/menu" %>
 
     <div class="pull-right">Pesquisar <input id="filter" type="text" /></div>
-    <div class="pull-left">Total de Horas Aprovadas: <%=  ((Overtime.SumOvertimes(current_user) -Discount.diff(current_user)) / 3600).to_i %> </div>
+    <div class="pull-left">Total de Horas Aprovadas: <%= humanize(((Overtime.SumOvertimes(current_user) -Discount.diff(current_user))).to_i) %>
+     </div>
     <table data-filter="#filter" class="footable">
       <thead>
         <tr>
