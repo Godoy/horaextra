@@ -18,7 +18,16 @@
     </div>
     <div class="pull-right"><strong>Pesquisar</strong> <input id="filter" type="text" /></div>
     <div class="pull-left"><strong>Horas Aprovadas:</strong> <%= humanize((Overtime.SumOvertimes(current_user)).to_i) %>
-      <div style="padding-bottom: 10px;"><strong>Saldo</strong>: <%= humanize((Overtime.SumOvertimes(current_user) - Discount.diff(current_user)).to_i) %> </div>
+      <div style="padding-bottom: 10px;"><strong>Saldo</strong>:
+      <% if Overtime.SumOvertimes(current_user).to_i >  Discount.diff(current_user).to_i %>
+        
+            <span style="color: green"><%= humanize((Overtime.SumOvertimes(current_user).to_i - Discount.diff(current_user).to_i)) %></span>
+
+        <% else %>
+            
+            <span style="color: red"><%= humanize((Discount.diff(current_user).to_i - Overtime.SumOvertimes(current_user).to_i)) %></span>
+
+        <% end %> </div>  </div>
     </div>
     <div style="clear: both;"></div>
 
