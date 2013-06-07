@@ -5,10 +5,11 @@ HorasExtras::Application.routes.draw do
 
   match 'horas-extras' => "overtimes#index"
   match 'registrar-hora-extra' => "overtimes#new"
-  match 'aprovar/:id' => "overtimes#approve"
-  match 'no_approved/:id' => "overtimes#no_approved"
+  match 'aprovando-a-hora-extra/:description' => "overtimes#approve"
+  match 'nao-aprovo/:description' => "overtimes#no_approved"
   match 'manager/:project_id' => "overtimes#manager"
   match 'manager' => "overtimes#manager"
+  match 'desconto' => "discount#discount"
 
   devise_for :admins
 

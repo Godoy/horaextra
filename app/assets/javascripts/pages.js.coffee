@@ -5,3 +5,11 @@
 $ ->
 	$("#project_project_id").change -> 
   		window.location.href = "/manager/" + $(this).val()
+
+	$(".abaExtra").click ->
+	  unless $(this).hasClass("selected")
+	    abaTarget = $(this).attr("data-aba")
+	    $(".abaExtra").removeClass "selected"
+	    $(this).addClass "selected"
+	    $(".boxTextos").hide()
+	    $("." + abaTarget).fadeIn()

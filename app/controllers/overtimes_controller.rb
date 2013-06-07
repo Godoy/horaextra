@@ -4,6 +4,7 @@ class OvertimesController < ApplicationController
   # GET /overtimes.json
   def index
     @overtimes = current_user.overtimes.all
+    @discount = current_user.discount.all
 
     respond_to do |format|
       format.html # index.html.erb

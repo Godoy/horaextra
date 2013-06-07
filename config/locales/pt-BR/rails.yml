@@ -272,7 +272,7 @@ pt-BR:
         current_sign_in_ip: "Ip"
         last_sign_in_at: "Ultima vez que logou"
       discount:
-        time_off: "Hora da Folga"
+        time_off: "Tempo de Folga"
         day_off: "Dia da Folga"
         description: "Motivo"
         user: "Usuário"

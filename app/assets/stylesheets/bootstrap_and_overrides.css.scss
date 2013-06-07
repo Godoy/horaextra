@@ -49,6 +49,7 @@ $laranja:#FF7800;
 $cinza:#666;
 $cinzaEscuro:#333;
 $cinzaClaro:#ccc;
+$cinzaMedio:#F2F1F1;
 
 h1{
 	font:{
@@ -63,6 +64,13 @@ h1{
 h1,h2{
 	display: inline-block;
 }
+.barra-link {
+	background: $cinzaMedio;
+	color: $cinzaEscuro;
+	widht: 100%;
+	height: 100px;
+}
+
 
 h2{
 	font:{
@@ -366,3 +374,36 @@ $tamanho: 1px solid $cinzaClaro;
 
 
 }
+#navInfoTab {
+	overflow: hidden;
+	padding-bottom: 40px;
+}
+.abaExtra {
+    font-size: 16pt;
+    width: 270px;
+    height: 68px;
+    line-height: 68px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: linear-gradient(2deg, #D64E00 30%, #F07511 70%) repeat scroll 0 0 transparent;
+    float: left;
+    color: #FFF;
+    text-align: center;
+    position: relative;
+    text-decoration: none;}
+  .abaExtra:hover {
+  	text-decoration: none;
+  }  
+  .abaExtra.selected {
+    background: #292929;
+    color: #fff;
+    text-decoration: none;
+    }
+  .abaRight {
+    float: right; }
+  .InfoDesconto {
+    display: none;
+    }
