@@ -109,7 +109,7 @@ class OvertimesController < ApplicationController
     end
   end
   def rh
-    @user = User.all
+    @users = User.all
     @overtimes = current_user.overtimes.all
    
     respond_to do |format|

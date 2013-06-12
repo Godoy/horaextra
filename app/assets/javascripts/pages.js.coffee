@@ -14,5 +14,5 @@ $ ->
 	    $(".boxTextos").hide()
 	    $("." + abaTarget).fadeIn()
 
-	 $("#overtime_overtime_user").change -> 
-  	    window.location.href = "/rh/" + $(this).val()
+	$("#user_user_id").change -> 
+  	   window.location.href = "/rh/" + $(this).val()

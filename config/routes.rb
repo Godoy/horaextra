@@ -11,7 +11,7 @@ HorasExtras::Application.routes.draw do
   match 'manager' => "overtimes#manager"
   match 'desconto' => "discount#discount"
   match 'rh' => "overtimes#rh"
-  match 'rh/:overtime_user' => "overtimes#rh"
+  match 'rh/:user_id' => "overtimes#rh"
 
   devise_for :admins
 

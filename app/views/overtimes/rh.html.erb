@@ -2,6 +2,7 @@
 
 <%= render "shared/menu" %>
    
+    <div class="pull-left" > <%=select("user", "user_id", @users.collect {|user| [ user.name, user.id ] }, { :prompt => 'Selecione um usuario' }) %></div>
     <div class="pull-rightt" >
      <%= link_to "Gerar Excel", rh_path(format: "csv")  %>  
    </div>
