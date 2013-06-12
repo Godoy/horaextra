@@ -1,0 +1,57 @@
+<h1>RH no comando</h1>
+
+<%= render "shared/menu" %>
+   
+    <div class="pull-rightt" >
+     <%= link_to "Gerar Excel", rh_path(format: "csv")  %>  
+   </div>
+   <div style="clear: both;"></div>
+    <table data-filter="#filter" class="footable">
+      <thead>
+        <tr>
+          <th data-class="expand" data-sort-initial="true">
+            Usuario 
+          </th>
+          <th>
+            Projeto
+          </th>
+          <th data-hide="phone,tablet">
+            Horario Inicial
+          </th>
+          <th data-hide="phone,tablet" data-type="numeric"> 
+            Horario Final
+          </th>
+          <th data-hide="phone">
+            Motivo
+          </th>
+          
+          <th data-hide="phone">
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @overtimes.each do |overtime| %>
+          <tr>
+            <td><%= overtime.project.name %></td>
+            <td><%= overtime.user.name %></td>
+            <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+            <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+            <td data-value="suspended"><%= overtime.description %></td>
+            <td data-value="suspended">
+              <% if overtime.status == "pedding" 
+                  concat image_tag("suspended.png")           
+               else overtime.status == "approved"
+                  concat image_tag("active.png") 
+              end
+              %>              
+          </tr>
+      <% end %> 
+      </tbody>
+    </table>
+
+    
+
+
+
+     

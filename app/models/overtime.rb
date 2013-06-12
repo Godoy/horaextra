@@ -12,12 +12,19 @@ class Overtime < ActiveRecord::Base
   		overtime += (overtimesApproved.end_overtime - overtimesApproved.start_overtime).to_i
   	end
     overtime
-  end  
+  end 
+  def searchUser
+    @overtime = Overtime.find(:all, :conditions => ["overtime_user = ? and start_overtime >= 2013-06-10 and end_overtime <=2013-07-30", params[:id]])
+   end 
+  def self.to_csv(options = {})
+    CSV.generate(options) do |csv|
+      csv << column_user
+      all.each do |overtime|
+        csv << overtime.attributes.values_at(*column_user)
+      end
+    end
+  end
 end 
 
 
-
-#- Exibir, também no relatório de horas extras, o total de horas APROVADAS que o usuario possui
-
-#"Overtime.SumOvertimes(current_user) - 
 

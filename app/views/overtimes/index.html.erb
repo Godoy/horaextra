@@ -24,6 +24,7 @@
 
         <% else %>
             
+            
             <span style="color: red"><%= humanize((Discount.diff(current_user).to_i - Overtime.SumOvertimes(current_user).to_i)) %></span>
 
         <% end %> </div>  

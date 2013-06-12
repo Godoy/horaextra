@@ -10,10 +10,13 @@ HorasExtras::Application.routes.draw do
   match 'manager/:project_id' => "overtimes#manager"
   match 'manager' => "overtimes#manager"
   match 'desconto' => "discount#discount"
+  match 'rh' => "overtimes#rh"
+  match 'rh/:overtime_user' => "overtimes#rh"
 
   devise_for :admins
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
 
   get "pages/home"
   get "pages/ovos"

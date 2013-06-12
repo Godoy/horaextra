@@ -37,6 +37,9 @@ class OvertimesController < ApplicationController
   def create
     @overtime = Overtime.new(params[:overtime])
     @overtime.user = current_user
+    
+    #flash[:notice] = "Parabens sua hora extra foi criada"
+    
 
     respond_to do |format|
       if @overtime.save
@@ -103,6 +106,17 @@ class OvertimesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @overtimes }
+    end
+  end
+  def rh
+    @user = User.all
+    @overtimes = current_user.overtimes.all
+   
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @overtimes }
+      format.csv { render text: @overtimes}
+      format.xls { send_data @overtimes.to_csv(col_sep: "\t") }
     end
   end
 end

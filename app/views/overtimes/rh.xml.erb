@@ -1,0 +1,24 @@
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Release Date</th>
+    <th>Price</th>
+  </tr>
+   <% @overtimes.each do |overtime| %>
+    <tr>
+      <td><%= overtime.project.name %></td>
+      <td><%= overtime.user.name %></td>
+      <td><%= overtime.start_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+      <td><%= overtime.end_overtime.strftime('%d/%m/%Y %H:%M') %></td>
+      <td data-value="suspended"><%= overtime.description %></td>
+      <td data-value="suspended">
+      <% if overtime.status == "pedding" 
+         concat image_tag("suspended.png")           
+         else overtime.status == "approved"
+          concat image_tag("active.png") 
+         end
+         %>              
+    </tr>
+  <% end %>
+</table
