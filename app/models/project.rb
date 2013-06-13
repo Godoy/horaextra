@@ -9,15 +9,5 @@ class Project < ActiveRecord::Base
 
   has_and_belongs_to_many :users
   	attr_accessible :user_ids
-
-
-  def SumOvertimes
-   	overtimesApproveds = self.overtimes.where("status = 'approved'")
-    overtime = 0
-  	overtimesApproveds.each do | overtimesApproved |
-  		overtime += (overtimesApproved.end_overtime - overtimesApproved.start_overtime).to_i
-  	end
-    overtime
-  end
-  	
+ 	
 end

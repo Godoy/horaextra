@@ -110,7 +110,12 @@ class OvertimesController < ApplicationController
   end
   def rh
     @users = User.all
-    @overtimes = current_user.overtimes.all
+
+    if params[:id]
+      @overtimes = User.find(params[:id]).overtimes.all
+    else
+      @overtimes = current_user.overtimes.all
+    end
    
     respond_to do |format|
       format.html # index.html.erb

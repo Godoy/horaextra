@@ -10,8 +10,9 @@ HorasExtras::Application.routes.draw do
   match 'manager/:project_id' => "overtimes#manager"
   match 'manager' => "overtimes#manager"
   match 'desconto' => "discount#discount"
+  match 'rh/:id' => "overtimes#rh"
   match 'rh' => "overtimes#rh"
-  match 'rh/:user_id' => "overtimes#rh"
+ 
 
   devise_for :admins
 

@@ -2,7 +2,7 @@
 
 <%= render "shared/menu" %>
 
-    <div class="pull-right">Total de Horas  <%= @total_times %>  </div>
+    <div class="pull-right"><strong>Total de Horas:</strong>  <%= @total_times %> </div>
     <div class="pull-left" > <%=select("project", "project_id", @projects.collect {|project| [ project.name, project.id ] }, { :prompt => 'Selecione um projeto' }) %></div>
     <table data-filter="#filter" class="footable">
       <thead>

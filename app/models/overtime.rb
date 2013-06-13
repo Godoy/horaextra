@@ -4,7 +4,11 @@ class Overtime < ActiveRecord::Base
 
   belongs_to :user, :inverse_of => :overtimes
   belongs_to :project
- 
+
+  def self.rh
+    ["luiz.alves@planb.com.br", "jacqueline.pereira@planb.com.br", "viviane.souza@planb.com.br","nayara.oliveira@planb.com.br"]
+  end 
+
   def self.SumOvertimes(current_user)
    	overtimesApproveds = current_user.overtimes.where("status = 'approved'")
     overtime = 0
@@ -13,9 +17,7 @@ class Overtime < ActiveRecord::Base
   	end
     overtime
   end 
-  def searchUser
-    @overtime = Overtime.find(:all, :conditions => ["overtime_user = ? and start_overtime >= 2013-06-10 and end_overtime <=2013-07-30", params[:id]])
-   end 
+   
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
       csv << column_user
@@ -28,3 +30,6 @@ end
 
 
 
+#def searchUser
+  #  @overtime = Overtime.find(:all, :conditions => ["overtime_user = ? and start_overtime >= 2013-06-10 and end_overtime <=2013-07-30", params[:id]])
+   #end
