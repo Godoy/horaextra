@@ -423,8 +423,12 @@ $tamanho: 1px solid $cinzaClaro;
     text-align: center;
     position: relative;
     text-decoration: none;
+    margin-bottom: 10px;
    }
   a:hover, a:focus {
 	color: #005580;
 	text-decoration: none;
 	}
+  .row-fluid .span2 {
+    width: 100%;
+}

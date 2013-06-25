@@ -8,7 +8,7 @@
       	<li><i class="icon-list-alt"></i><%= link_to "Dedicado ao Gestor", "/manager"%></li>
       <% end %>
       <% if Overtime.rh.include?(current_user.email) %>
-        <li><i class="icon-list-alt"></i><%= link_to "RH", "/rh"%></li>
+        <li><i class="icon-eye-open"></i><%= link_to "RH", "/rh"%></li>
       <% end %>
 
       <li><i class="icon-remove-circle"></i><%= link_to "Sair", "/users/sign_out"%></li>

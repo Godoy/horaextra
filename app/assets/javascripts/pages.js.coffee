@@ -16,3 +16,4 @@ $ ->
 
 	$("#user_user_id").change -> 
   	   window.location.href = "/rh/" + $(this).val()
+  	

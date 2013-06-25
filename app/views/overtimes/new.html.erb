@@ -1,6 +1,19 @@
-<%= render "shared/menu" %>
+<script type="text/javascript">
+	$(function() {
+		$('#flash_notice').avgrund({
+			height: 200,
+			openOnEvent: false,
+			holderClass: 'custom',
+			showClose: true,
+			showCloseText: 'Close',
+			enableStackAnimation: true,
+			onBlurContainer: '#main',
+			template: '<p>Sua hora extra foi computada, aperta esc.</p>'
+		});
+	});
+</script>
 
- 
+<%= render "shared/menu" %>
 <div class="span10 offset1">
 	<h1>Registro de Horas Extras</h1>
 	<p class="txt-descricao">Aqui são preenchidas as horas extras e sua justificativa. Seu nome de usuário será registrado quando você enviar este formulário.</p>

@@ -1,7 +1,14 @@
+
+<script src="bootstrap-datepicker.js">
+   $('.datepicker').datepicker();
+</script>
 <h1>RH no comando</h1>
 
 <%= render "shared/menu" %>
-   
+    <div class="input-append date datepicker" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+    <input class="span2" size="16" type="text" value="12-02-2012">
+    <span class="add-on"><i class="icon-th"></i></span>
+    </div>   
     <div class="pull-left" > <%=select("user", "user_id", @users.collect{|user| [ user.name, user.id ] }, { :prompt => 'Selecione um usuario' }) %></div>
     <div class="pull-rightt" >
      <%= link_to "Gerar Excel", rh_path(format: "csv")  %>  
