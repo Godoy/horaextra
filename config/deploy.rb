@@ -1,6 +1,6 @@
 set :application, "horaextra"
 set :cliente, "planb"
-set :repository,  "git@github.com:adrianogodoy/horaextra.git"
+set :repository,  "https://github.com/adrianogodoy/horaextra.git"
 
 set :deploy_to, "/home/ubuntu/www/#{cliente}/#{application}"
 
