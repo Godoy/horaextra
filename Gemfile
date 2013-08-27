@@ -13,7 +13,7 @@ gem 'rack-rewrite', '~> 1.2.1'
 
 
 group :production do
-  #gem 'thin'
+  gem 'mysql2'
   gem 'pg'
 end
  

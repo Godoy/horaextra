@@ -89,6 +89,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.4)
     multipart-post (1.2.0)
+    mysql2 (0.3.13)
     nested_form (0.3.2)
     nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
@@ -198,6 +199,7 @@ DEPENDENCIES
   devise
   dotiw (~> 1.1.1)
   jquery-rails
+  mysql2
   omniauth-google-oauth2
   paperclip
   pg
